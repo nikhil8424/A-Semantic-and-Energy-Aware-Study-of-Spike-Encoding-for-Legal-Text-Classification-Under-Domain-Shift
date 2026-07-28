@@ -1,0 +1,203 @@
+Skip to content
+
+AI
+
+
+
+Pasted-You-are-a-Senior-AI-Research-Engineer-Machine-Learning-_1785242293718.txt
+
+Pasted--DATASET-MANAGEMENT--1785242329289_1785242329290.txt
+5 minutes ago
+
+3 actions
+You've reached your monthly free quota limit. It will reset on August 14, 2026.
+
+
+Worked for 8 seconds
+Agent activity Agent activity Agent activity
+
+Scroll to latest
+You're out of credits.
+
+Message Agent...
+
+
+
+
+
+Loading... - Replit
+
+Pasted--DATASET-MANAGEMENT--1785242329289_1785242329290.txt
+====================================================================
+DATASET MANAGEMENT
+====================================================================
+
+The framework must use the Hugging Face `datasets` library for downloading, loading, preprocessing, and caching legal NLP datasets.
+
+Import using
+
+from datasets import load_dataset
+
+The Dataset Manager must automatically download datasets the first time they are used and cache them locally for future experiments.
+
+Downloaded datasets should never be downloaded again unless the user explicitly refreshes the cache.
+
+Support both online and offline execution after the first download.
+
+====================================================================
+SUPPORTED DATASETS
+====================================================================
+
+Initially implement support for the following legal datasets.
+
+1. CaseHOLD
+
+```python
+from datasets import load_dataset
+
+dataset = load_dataset(
+    "coastalcph/lex_glue",
+    "case_hold"
+)
+```
+
+Use for
+
+• Long legal document classification
+• Transformer baseline
+• Spike encoding experiments
+• Domain shift evaluation
+
+------------------------------------------------------------
+
+2. ECtHR-A
+
+```python
+from datasets import load_dataset
+
+dataset = load_dataset(
+    "coastalcph/lex_glue",
+    "ecthr_a"
+)
+```
+
+Use for
+
+• Multi-label legal classification
+• Cross-domain evaluation
+• Semantic preservation experiments
+
+------------------------------------------------------------
+
+3. ECtHR-B
+
+```python
+from datasets import load_dataset
+
+dataset = load_dataset(
+    "coastalcph/lex_glue",
+    "ecthr_b"
+)
+```
+
+Use for
+
+• Cross-domain robustness
+• Generalization experiments
+• Domain shift testing
+
+====================================================================
+FUTURE DATASET SUPPORT
+====================================================================
+
+The Dataset Manager should be modular so that new datasets can be added with minimal code changes.
+
+Prepare support for
+
+• LexGLUE
+• LEXTREME
+• EURLEX
+• LEDGAR
+• SCOTUS
+• UNFAIR-ToS
+
+The framework should also allow users to add any Hugging Face dataset by entering the dataset name and configuration.
+
+====================================================================
+CUSTOM DATASETS
+====================================================================
+
+Support uploading local datasets in the following formats
+
+• CSV
+• JSON
+• JSONL
+• Excel (.xlsx)
+• Parquet
+
+Automatically detect
+
+• Text column
+• Label column
+• Multi-label datasets
+• Class names
+
+====================================================================
+DATASET MANAGER FEATURES
+====================================================================
+
+Implement a complete Dataset Manager capable of
+
+• Automatic downloading
+• Automatic local caching
+• Dataset version tracking
+• Dataset preview
+• Train/Validation/Test split viewer
+• Dataset statistics
+• Number of samples
+• Number of classes
+• Label distribution
+• Class imbalance statistics
+• Average document length
+• Median document length
+• Maximum document length
+• Token length statistics
+• Vocabulary statistics
+• Search and filtering
+• Dataset refresh
+• Delete cached datasets
+• Export dataset statistics
+
+====================================================================
+PREPROCESSING
+====================================================================
+
+The Dataset Manager should provide configurable preprocessing including
+
+• Text cleaning
+• Unicode normalization
+• Lowercasing (optional)
+• Stopword removal (optional)
+• Tokenization
+• Padding
+• Truncation
+• Sliding window chunking for long legal documents
+• Batch processing
+
+====================================================================
+CACHE
+====================================================================
+
+Store datasets locally in
+
+storage/
+
+    datasets/
+
+        raw/
+
+        processed/
+
+        cache/
+
+The framework should automatically reuse cached datasets whenever possible to ensure experiments are reproducible and avoid unnecessary downloads.

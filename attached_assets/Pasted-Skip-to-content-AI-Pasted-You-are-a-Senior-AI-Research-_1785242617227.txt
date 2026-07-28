@@ -1,0 +1,291 @@
+Skip to content
+
+AI
+
+
+
+Pasted-You-are-a-Senior-AI-Research-Engineer-Machine-Learning-_1785242293718.txt
+
+Pasted--DATASET-MANAGEMENT--1785242329289_1785242329290.txt
+4 minutes ago
+
+3 actions
+You've reached your monthly free quota limit. It will reset on August 14, 2026.
+
+
+Worked for 8 seconds
+Agent activity Agent activity Agent activity
+
+Scroll to latest
+You're out of credits.
+
+Message Agent...
+
+
+
+
+
+Loading... - Replit
+
+Pasted-You-are-a-Senior-AI-Research-Engineer-Machine-Learning-_1785242293718.txt
+You are a Senior AI Research Engineer, Machine Learning Researcher, Python Software Engineer, and Scientific Computing Expert.
+
+Your task is to build a COMPLETE experimental research framework for my research project.
+
+This framework is NOT intended to be a commercial application.
+
+It is NOT an enterprise system.
+
+It is NOT a SaaS product.
+
+It is NOT a production deployment platform.
+
+Instead, it is a research framework whose only purpose is to conduct reproducible experiments, compare models, generate evaluation metrics, create publication-quality visualizations, and produce the experimental results required for my research paper.
+
+====================================================================
+RESEARCH TITLE
+====================================================================
+
+A Semantic- and Energy-Aware Study of Spike Encoding for Legal Text Classification Under Domain Shift
+
+====================================================================
+PRIMARY OBJECTIVE
+====================================================================
+
+Develop a complete experimental pipeline that compares Transformer-based Legal NLP models with Spike Encoding + Spiking Neural Networks.
+
+The framework must allow me to conduct all experiments required to answer my research questions and validate my hypotheses.
+
+The software itself is only a research tool.
+
+The outputs of the framework will become the experimental results, tables, graphs, and conclusions of my research paper.
+
+====================================================================
+RESEARCH QUESTIONS
+====================================================================
+
+The framework must enable experiments that answer:
+
+• Which spike encoding performs best for legal text classification?
+
+• Does spike encoding preserve semantic similarity compared to the original transformer embeddings?
+
+• How robust are spike-based legal classifiers under domain shift?
+
+• Does spike encoding provide measurable energy savings compared to transformer baselines?
+
+====================================================================
+HYPOTHESES
+====================================================================
+
+The framework should allow validation of:
+
+H1
+Spike encoding achieves competitive classification performance compared to transformer baselines.
+
+H2
+Time-based spike encodings preserve legal semantics better than simple rate coding.
+
+H3
+Energy improvements exist but become smaller when memory access is included.
+
+H4
+Domain shift affects all models differently.
+
+====================================================================
+IMPLEMENTATION REQUIREMENTS
+====================================================================
+
+Everything must be written entirely in Python.
+
+No external infrastructure.
+
+Do NOT use:
+
+PostgreSQL
+
+MySQL
+
+MongoDB
+
+Redis
+
+Celery
+
+RabbitMQ
+
+Kafka
+
+Docker
+
+Docker Compose
+
+Kubernetes
+
+MLflow
+
+Cloud databases
+
+Cloud storage
+
+Cloud experiment tracking
+
+The framework must run after only
+
+pip install -r requirements.txt
+
+python main.py
+
+====================================================================
+HUGGING FACE INTEGRATION
+====================================================================
+
+Use the Hugging Face ecosystem throughout the project.
+
+Libraries
+
+datasets
+
+transformers
+
+sentence-transformers
+
+huggingface_hub
+
+Automatically download and locally cache all datasets and models.
+
+Support offline execution after the first download.
+
+Support:
+
+LexGLUE
+
+CaseHOLD
+
+ECtHR-A
+
+ECtHR-B
+
+EURLEX
+
+LEDGAR
+
+SCOTUS
+
+UNFAIR-ToS
+
+LEXTREME
+
+Also allow custom datasets:
+
+CSV
+
+JSON
+
+JSONL
+
+Parquet
+
+Excel
+
+Support Hugging Face transformer models including:
+
+LegalBERT
+
+BERT
+
+RoBERTa
+
+DeBERTa-v3
+
+Sentence-BERT
+
+Automatically cache all downloaded models locally.
+
+====================================================================
+EXPERIMENTAL PIPELINE
+====================================================================
+
+The framework should implement the following workflow:
+
+Dataset Selection
+
+↓
+
+Dataset Download
+
+↓
+
+Preprocessing
+
+↓
+
+Transformer Tokenization
+
+↓
+
+Embedding Generation
+
+↓
+
+Embedding Cache
+
+↓
+
+Spike Encoding
+
+↓
+
+Spike Train Generation
+
+↓
+
+Transformer Baseline Training
+
+↓
+
+SNN Training
+
+↓
+
+Evaluation
+
+↓
+
+Semantic Preservation Analysis
+
+↓
+
+Energy Analysis
+
+↓
+
+Domain Shift Evaluation
+
+↓
+
+Visualization
+
+↓
+
+Automatic Report Generation
+
+====================================================================
+SPIKE ENCODING
+====================================================================
+
+Implement multiple encoding methods including
+
+Poisson Rate Coding
+
+Latency Coding
+
+Temporal Coding
+
+Population Coding
+
+Binary Threshold Encoding
+
+Each encoding should be independently configurable and comparable.
+
+======...
