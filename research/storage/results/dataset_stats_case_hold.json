@@ -1,0 +1,140 @@
+{
+  "dataset_info": {
+    "hf_name": "coastalcph/lex_glue",
+    "hf_config": "case_hold",
+    "task": "multi_class",
+    "text_col": "context",
+    "label_col": "label",
+    "description": "CaseHOLD \u2014 Legal holding classification (LexGLUE)"
+  },
+  "splits": {
+    "train": {
+      "split": "train",
+      "n_samples": 500,
+      "n_classes": 5,
+      "is_multilabel": false,
+      "avg_labels_per_sample": 1.0,
+      "label_distribution": {
+        "0": 101,
+        "1": 95,
+        "4": 107,
+        "3": 105,
+        "2": 92
+      },
+      "class_imbalance_ratio": 1.1630434782608696,
+      "word_stats": {
+        "mean": 135.894,
+        "median": 136.0,
+        "max": 160,
+        "min": 61,
+        "std": 8.809697157110453
+      },
+      "char_stats": {
+        "mean": 843.232,
+        "max": 855
+      },
+      "token_stats": {
+        "mean": 176.6622,
+        "median": 176.8,
+        "max": 208,
+        "pct_over_512": 0.0
+      }
+    },
+    "test": {
+      "split": "test",
+      "n_samples": 200,
+      "n_classes": 5,
+      "is_multilabel": false,
+      "avg_labels_per_sample": 1.0,
+      "label_distribution": {
+        "4": 42,
+        "2": 38,
+        "3": 40,
+        "0": 36,
+        "1": 44
+      },
+      "class_imbalance_ratio": 1.2222222222222223,
+      "word_stats": {
+        "mean": 136.58,
+        "median": 137.0,
+        "max": 158,
+        "min": 67,
+        "std": 8.342277866386375
+      },
+      "char_stats": {
+        "mean": 846.09,
+        "max": 855
+      },
+      "token_stats": {
+        "mean": 177.55400000000003,
+        "median": 178.1,
+        "max": 205,
+        "pct_over_512": 0.0
+      }
+    },
+    "validation": {
+      "split": "validation",
+      "n_samples": 100,
+      "n_classes": 5,
+      "is_multilabel": false,
+      "avg_labels_per_sample": 1.0,
+      "label_distribution": {
+        "3": 16,
+        "0": 22,
+        "4": 20,
+        "1": 24,
+        "2": 18
+      },
+      "class_imbalance_ratio": 1.5,
+      "word_stats": {
+        "mean": 135.94,
+        "median": 136.0,
+        "max": 151,
+        "min": 108,
+        "std": 7.216397993459065
+      },
+      "char_stats": {
+        "mean": 846.2,
+        "max": 854
+      },
+      "token_stats": {
+        "mean": 176.722,
+        "median": 176.8,
+        "max": 196,
+        "pct_over_512": 0.0
+      }
+    }
+  },
+  "global": {
+    "split": "all",
+    "n_samples": 800,
+    "n_classes": 5,
+    "is_multilabel": false,
+    "avg_labels_per_sample": 1.0,
+    "label_distribution": {
+      "0": 159,
+      "1": 163,
+      "4": 169,
+      "3": 161,
+      "2": 148
+    },
+    "class_imbalance_ratio": 1.1418918918918919,
+    "word_stats": {
+      "mean": 136.07125,
+      "median": 136.0,
+      "max": 160,
+      "min": 61,
+      "std": 8.514762089307016
+    },
+    "char_stats": {
+      "mean": 844.3175,
+      "max": 855
+    },
+    "token_stats": {
+      "mean": 176.892625,
+      "median": 176.8,
+      "max": 208,
+      "pct_over_512": 0.0
+    }
+  }
+}

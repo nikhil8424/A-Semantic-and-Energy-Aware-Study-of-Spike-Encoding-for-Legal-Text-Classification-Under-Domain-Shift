@@ -1,0 +1,15 @@
+{
+  "case_hold": {
+    "cached_at": "2026-07-28T19:06:08.124268",
+    "splits": [
+      "train",
+      "test",
+      "validation"
+    ],
+    "sizes": {
+      "train": 45000,
+      "test": 3600,
+      "validation": 3900
+    }
+  }
+}

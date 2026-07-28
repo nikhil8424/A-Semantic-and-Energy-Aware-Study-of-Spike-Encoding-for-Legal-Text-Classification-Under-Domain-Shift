@@ -1,0 +1,118 @@
+19:05:53 [INFO] src.experiments.pipeline — ============================================================
+19:05:53 [INFO] src.experiments.pipeline — SPIKE-LEGAL-NLP EXPERIMENT PIPELINE
+19:05:53 [INFO] src.experiments.pipeline — ============================================================
+19:05:53 [INFO] src.experiments.pipeline — Dataset:     case_hold
+19:05:53 [INFO] src.experiments.pipeline — Transformer: legal_bert
+19:05:53 [INFO] src.experiments.pipeline — Encodings:   ['poisson_rate', 'latency', 'temporal', 'population', 'binary_threshold']
+19:05:53 [INFO] src.experiments.pipeline — ============================================================
+19:05:53 [INFO] src.experiments.pipeline — 
+[Stage 1/8] Loading dataset…
+19:05:58 [INFO] src.datasets.manager — Downloading 'case_hold' from HuggingFace…
+19:06:01 [ERROR] datasets.load — `trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'coastalcph/lex_glue' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+19:06:02 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/datasets/coastalcph/lex_glue/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+19:06:02 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/coastalcph/lex_glue/c23fdff1a6bf74e0e1a71cb86f1e781d37da888c/README.md "HTTP/1.1 200 OK"
+19:06:02 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/datasets/coastalcph/lex_glue/resolve/c23fdff1a6bf74e0e1a71cb86f1e781d37da888c/lex_glue.py "HTTP/1.1 404 Not Found"
+19:06:03 [INFO] httpx — HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/coastalcph/lex_glue/coastalcph/lex_glue.py "HTTP/1.1 404 Not Found"
+19:06:03 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/datasets/coastalcph/lex_glue/revision/c23fdff1a6bf74e0e1a71cb86f1e781d37da888c "HTTP/1.1 200 OK"
+19:06:03 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/datasets/coastalcph/lex_glue/resolve/c23fdff1a6bf74e0e1a71cb86f1e781d37da888c/.huggingface.yaml "HTTP/1.1 404 Not Found"
+19:06:03 [INFO] httpx — HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=coastalcph/lex_glue "HTTP/1.1 200 OK"
+19:06:04 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/datasets/coastalcph/lex_glue/tree/c23fdff1a6bf74e0e1a71cb86f1e781d37da888c/case_hold?recursive=true&expand=false "HTTP/1.1 200 OK"
+19:06:04 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/datasets/coastalcph/lex_glue/tree/c23fdff1a6bf74e0e1a71cb86f1e781d37da888c?recursive=false&expand=false "HTTP/1.1 200 OK"
+19:06:04 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/datasets/coastalcph/lex_glue/resolve/c23fdff1a6bf74e0e1a71cb86f1e781d37da888c/dataset_infos.json "HTTP/1.1 404 Not Found"
+19:06:08 [INFO] src.experiments.pipeline — 
+[Stage 2/8] Extracting transformer embeddings…
+19:06:39 [INFO] src.experiments.pipeline —   Extracting train embeddings (500 samples)…
+19:06:39 [INFO] src.models.transformer_baseline — Loading tokenizer: nlpaueb/legal-bert-base-uncased
+19:06:40 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+19:06:40 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/config.json "HTTP/1.1 200 OK"
+19:06:40 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+19:06:40 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/tokenizer_config.json "HTTP/1.1 200 OK"
+19:06:41 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+19:06:41 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+19:06:41 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+19:06:42 [INFO] src.models.transformer_baseline — Loading base model for embedding extraction
+19:06:42 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+19:06:42 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/config.json "HTTP/1.1 200 OK"
+19:06:48 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+19:06:48 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased "HTTP/1.1 200 OK"
+19:06:49 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/commits/main "HTTP/1.1 200 OK"
+19:06:49 [INFO] src.models.transformer_baseline — Model loaded on cpu
+19:06:49 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/discussions?p=0 "HTTP/1.1 200 OK"
+19:06:50 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/commits/refs%2Fpr%2F1 "HTTP/1.1 200 OK"
+19:06:50 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/refs%2Fpr%2F1/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+19:06:50 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/refs%2Fpr%2F1/model.safetensors "HTTP/1.1 302 Found"
+19:08:14 [INFO] src.experiments.pipeline — ============================================================
+19:08:14 [INFO] src.experiments.pipeline — SPIKE-LEGAL-NLP EXPERIMENT PIPELINE
+19:08:14 [INFO] src.experiments.pipeline — ============================================================
+19:08:14 [INFO] src.experiments.pipeline — Dataset:     case_hold
+19:08:14 [INFO] src.experiments.pipeline — Transformer: legal_bert
+19:08:14 [INFO] src.experiments.pipeline — Encodings:   ['poisson_rate', 'latency', 'temporal', 'population', 'binary_threshold']
+19:08:14 [INFO] src.experiments.pipeline — ============================================================
+19:08:14 [INFO] src.experiments.pipeline — 
+[Stage 1/8] Loading dataset…
+19:08:14 [INFO] src.datasets.manager — Loading 'case_hold' from cache: storage\datasets\cache\case_hold.pkl
+19:08:15 [INFO] src.experiments.pipeline — 
+[Stage 2/8] Extracting transformer embeddings…
+19:08:26 [INFO] src.experiments.pipeline —   Extracting train embeddings (500 samples)…
+19:08:26 [INFO] src.models.transformer_baseline — Loading tokenizer: nlpaueb/legal-bert-base-uncased
+19:08:26 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+19:08:26 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/config.json "HTTP/1.1 200 OK"
+19:08:27 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+19:08:27 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/tokenizer_config.json "HTTP/1.1 200 OK"
+19:08:27 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+19:08:27 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+19:08:27 [INFO] src.models.transformer_baseline — Loading base model for embedding extraction
+19:08:27 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+19:08:27 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/config.json "HTTP/1.1 200 OK"
+19:08:28 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+19:08:29 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased "HTTP/1.1 200 OK"
+19:08:29 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/commits/main "HTTP/1.1 200 OK"
+19:08:29 [INFO] src.models.transformer_baseline — Model loaded on cpu
+19:08:29 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/discussions?p=0 "HTTP/1.1 200 OK"
+19:08:30 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/commits/refs%2Fpr%2F1 "HTTP/1.1 200 OK"
+19:08:30 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/refs%2Fpr%2F1/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+19:08:30 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/refs%2Fpr%2F1/model.safetensors "HTTP/1.1 302 Found"
+19:08:44 [INFO] src.experiments.pipeline —   Extracting test embeddings (200 samples)…
+19:09:59 [INFO] src.experiments.pipeline —   Extracting validation embeddings (100 samples)…
+19:10:39 [INFO] src.experiments.pipeline — 
+[Stage 3/8] Generating spike trains…
+19:10:39 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding train split (500 samples)…
+19:10:40 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding test split (200 samples)…
+19:10:40 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding validation split (100 samples)…
+19:10:40 [INFO] src.experiments.pipeline —   [latency] Encoding train split (500 samples)…
+19:10:40 [INFO] src.experiments.pipeline —   [latency] Encoding test split (200 samples)…
+19:10:40 [INFO] src.experiments.pipeline —   [latency] Encoding validation split (100 samples)…
+19:10:40 [INFO] src.experiments.pipeline —   [temporal] Encoding train split (500 samples)…
+19:10:40 [INFO] src.experiments.pipeline —   [temporal] Encoding test split (200 samples)…
+19:10:40 [INFO] src.experiments.pipeline —   [temporal] Encoding validation split (100 samples)…
+19:10:41 [INFO] src.experiments.pipeline —   [population] Encoding train split (500 samples)…
+19:10:42 [INFO] src.experiments.pipeline —   [population] Encoding test split (200 samples)…
+19:10:43 [INFO] src.experiments.pipeline —   [population] Encoding validation split (100 samples)…
+19:10:44 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding train split (500 samples)…
+19:10:44 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding test split (200 samples)…
+19:10:44 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding validation split (100 samples)…
+19:10:44 [INFO] src.experiments.pipeline — 
+[Stage 4/8] Evaluating transformer baseline…
+19:10:44 [INFO] src.models.transformer_baseline — Extracting train embeddings [legal_bert]
+19:10:44 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_train.pkl
+19:10:44 [INFO] src.models.transformer_baseline — Loading tokenizer: nlpaueb/legal-bert-base-uncased
+19:10:44 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+19:10:44 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/config.json "HTTP/1.1 200 OK"
+19:10:44 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+19:10:44 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/tokenizer_config.json "HTTP/1.1 200 OK"
+19:10:45 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+19:10:45 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+19:10:45 [INFO] src.models.transformer_baseline — Loading base model for embedding extraction
+19:10:45 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+19:10:45 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/config.json "HTTP/1.1 200 OK"
+19:10:46 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+19:10:46 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased "HTTP/1.1 200 OK"
+19:10:46 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/commits/main "HTTP/1.1 200 OK"
+19:10:47 [INFO] src.models.transformer_baseline — Model loaded on cpu
+19:10:47 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/discussions?p=0 "HTTP/1.1 200 OK"
+19:10:47 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/commits/refs%2Fpr%2F1 "HTTP/1.1 200 OK"
+19:10:47 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/refs%2Fpr%2F1/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+19:10:47 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/refs%2Fpr%2F1/model.safetensors "HTTP/1.1 302 Found"
+19:11:45 [INFO] src.models.transformer_baseline — Training logistic regression probe…
