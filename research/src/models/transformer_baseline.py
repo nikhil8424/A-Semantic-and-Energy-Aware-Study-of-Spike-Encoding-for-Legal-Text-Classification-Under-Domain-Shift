@@ -181,11 +181,14 @@ class TransformerBaseline:
         Returns evaluation metrics on the validation set.
         """
         logger.info(f"Extracting train embeddings [{self.model_key}]")
-        X_train = self.get_embeddings(train_rows, cache_key=f"{cache_key}_train" if cache_key else None)
-        X_val = self.get_embeddings(val_rows, cache_key=f"{cache_key}_val" if cache_key else None)
+        X_train = self.get_embeddings(train_rows, cache_key=None)  # Disable cache to avoid stale data
+        logger.info(f"Extracting val embeddings [{self.model_key}]")
+        X_val = self.get_embeddings(val_rows, cache_key=None)  # Disable cache to avoid stale data
 
+        logger.info(f"X_train shape: {X_train.shape}, X_val shape: {X_val.shape}")
         y_train = [r["label"] for r in train_rows]
         y_val = [r["label"] for r in val_rows]
+        logger.info(f"y_train len: {len(y_train)}, y_val len: {len(y_val)}")
 
         # Handle multi-label as multi-class via label string
         if isinstance(y_train[0], list):
@@ -205,7 +208,7 @@ class TransformerBaseline:
         X_train_s = scaler.fit_transform(X_train)
         X_val_s = scaler.transform(X_val)
 
-        clf = LogisticRegression(max_iter=1000, C=1.0, solver="lbfgs", multi_class="auto")
+        clf = LogisticRegression(max_iter=1000, C=1.0, solver="lbfgs")
         clf.fit(X_train_s, y_train_enc)
 
         from sklearn.metrics import accuracy_score, f1_score

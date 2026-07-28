@@ -39,13 +39,14 @@ pip install -r requirements.txt
 
 ### Run the full pipeline
 ```bash
+#RUN KR RHA THA BC BHOT TIME LAG RHA AHI
 # Full pipeline on CaseHOLD with LegalBERT
 python main.py run --dataset case_hold --encoder legal_bert
 
 # Quick test run (reduced samples)
 python main.py run --quick
 
-# Only specific spike encodings
+# Only specific spike encodings NAHI RUN HUA BC
 python main.py run --encodings poisson_rate latency temporal
 
 # Skip slow stages
@@ -57,7 +58,7 @@ python main.py run --skip snn --skip domain_shift
 python main.py dataset list                    # List all datasets
 python main.py dataset info case_hold          # Show statistics
 python main.py dataset download case_hold      # Pre-download
-python main.py dataset custom data.csv         # Load custom dataset
+python main.py dataset custom data.csv         # Load custom datasetNAHI RUN HUA BC
 ```
 
 ### Spike encoding demo

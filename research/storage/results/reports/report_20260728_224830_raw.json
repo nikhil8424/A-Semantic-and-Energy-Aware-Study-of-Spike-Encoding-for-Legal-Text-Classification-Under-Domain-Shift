@@ -1,0 +1,243 @@
+{
+  "title": "A Semantic- and Energy-Aware Study of Spike Encoding for Legal Text Classification",
+  "timestamp": "2026-07-28 22:48:30",
+  "classification": {
+    "accuracy": 0.34,
+    "f1_macro": 0.3300076277650648,
+    "f1_micro": 0.34,
+    "n_train": 100,
+    "n_val": 50,
+    "model": "legal_bert",
+    "mode": "linear_probe"
+  },
+  "semantic": {
+    "poisson_rate": {
+      "encoding": "poisson_rate",
+      "n_samples": 200,
+      "mean_cosine_similarity": 0.03637521341443062,
+      "std_cosine_similarity": 0.012470593675971031,
+      "spearman_rho": 0.7969967109291969,
+      "spearman_p": 0.0,
+      "kendall_tau": 0.6479099988937378,
+      "kendall_p": 0.0,
+      "topk_nn_overlap_k5": 0.076,
+      "topk_nn_overlap_k10": 0.14850000000000002,
+      "topk_nn_overlap_k20": 0.23800000000000002,
+      "normalized_mse": 0.07335381954908371
+    },
+    "latency": {
+      "encoding": "latency",
+      "n_samples": 200,
+      "mean_cosine_similarity": -0.009068235754966736,
+      "std_cosine_similarity": 0.0015547372167930007,
+      "spearman_rho": 0.8478894682117847,
+      "spearman_p": 0.0,
+      "kendall_tau": 0.6730709075927734,
+      "kendall_p": 0.0,
+      "topk_nn_overlap_k5": 0.055,
+      "topk_nn_overlap_k10": 0.10350000000000001,
+      "topk_nn_overlap_k20": 0.21475000000000002,
+      "normalized_mse": 0.2926277816295624
+    },
+    "temporal": {
+      "encoding": "temporal",
+      "n_samples": 200,
+      "mean_cosine_similarity": -0.02989952079951763,
+      "std_cosine_similarity": 0.003126031020656228,
+      "spearman_rho": NaN,
+      "spearman_p": NaN,
+      "kendall_tau": NaN,
+      "kendall_p": NaN,
+      "topk_nn_overlap_k5": 0.035,
+      "topk_nn_overlap_k10": 0.0625,
+      "topk_nn_overlap_k20": 0.09125,
+      "normalized_mse": 0.2934819459915161
+    },
+    "population": {
+      "encoding": "population",
+      "n_samples": 200,
+      "mean_cosine_similarity": -0.04228360205888748,
+      "std_cosine_similarity": 0.008267143741250038,
+      "spearman_rho": 0.8229802552527967,
+      "spearman_p": 0.0,
+      "kendall_tau": 0.5987932682037354,
+      "kendall_p": 0.0,
+      "topk_nn_overlap_k5": 0.251,
+      "topk_nn_overlap_k10": 0.3389999999999999,
+      "topk_nn_overlap_k20": 0.46375,
+      "normalized_mse": 0.1425395905971527
+    },
+    "binary_threshold": {
+      "encoding": "binary_threshold",
+      "n_samples": 200,
+      "mean_cosine_similarity": 0.39141422510147095,
+      "std_cosine_similarity": 0.0277701523154974,
+      "spearman_rho": 0.8918759279463353,
+      "spearman_p": 0.0,
+      "kendall_tau": 0.7379701733589172,
+      "kendall_p": 0.0,
+      "topk_nn_overlap_k5": 0.532,
+      "topk_nn_overlap_k10": 0.6054999999999999,
+      "topk_nn_overlap_k20": 0.696,
+      "normalized_mse": 0.1683982014656067
+    }
+  },
+  "energy": {
+    "poisson_rate": {
+      "snn_energy": {
+        "model": "snn",
+        "n_sop_per_sample": 13240450.449387059,
+        "sparsity": 0.24567168951034546,
+        "active_fraction": 0.7543283104896545,
+        "compute_energy_pj": 11916405.404448353,
+        "memory_energy_pj": 9887132.03125,
+        "total_energy_pj": 21803537.435698353,
+        "total_energy_uj": 21.803537435698352,
+        "total_energy_mj": 0.021803537435698354
+      },
+      "transformer_energy": {
+        "model": "transformer",
+        "n_mac_ops": 45902462976,
+        "compute_energy_pj": 211151329689.59998,
+        "memory_energy_pj": 5474112000.0,
+        "total_energy_pj": 216625441689.59998,
+        "total_energy_mj": 216.62544168959997,
+        "total_energy_uj": 216625.44168959997
+      },
+      "comparison": {
+        "transformer_total_pj": 216625441689.59998,
+        "snn_total_pj": 21803537.435698353,
+        "energy_ratio": 9935.334682661396,
+        "energy_savings_pct": 99.9899349138007,
+        "snn_is_cheaper": true,
+        "compute_only_ratio": 17719.381182749785,
+        "memory_penalty": 0.0045641601254838545
+      }
+    },
+    "latency": {
+      "snn_energy": {
+        "model": "snn",
+        "n_sop_per_sample": 200350.526796875,
+        "sparsity": 0.9800260663032532,
+        "active_fraction": 0.019973933696746826,
+        "compute_energy_pj": 180315.4741171875,
+        "memory_energy_pj": 261802.34375,
+        "total_energy_pj": 442117.8178671875,
+        "total_energy_uj": 0.4421178178671875,
+        "total_energy_mj": 0.0004421178178671875
+      },
+      "transformer_energy": {
+        "model": "transformer",
+        "n_mac_ops": 45902462976,
+        "compute_energy_pj": 211151329689.59998,
+        "memory_energy_pj": 5474112000.0,
+        "total_energy_pj": 216625441689.59998,
+        "total_energy_mj": 216.62544168959997,
+        "total_energy_uj": 216625.44168959997
+      },
+      "comparison": {
+        "transformer_total_pj": 216625441689.59998,
+        "snn_total_pj": 442117.8178671875,
+        "energy_ratio": 489972.2040939649,
+        "energy_savings_pct": 99.99979590678988,
+        "snn_is_cheaper": true,
+        "compute_only_ratio": 1171010.5897643159,
+        "memory_penalty": 0.00012085484590731198
+      }
+    },
+    "temporal": {
+      "snn_energy": {
+        "model": "snn",
+        "n_sop_per_sample": 200616.96,
+        "sparsity": 0.9800000190734863,
+        "active_fraction": 0.019999980926513672,
+        "compute_energy_pj": 180555.264,
+        "memory_energy_pj": 262143.75,
+        "total_energy_pj": 442699.01399999997,
+        "total_energy_uj": 0.44269901399999995,
+        "total_energy_mj": 0.00044269901399999996
+      },
+      "transformer_energy": {
+        "model": "transformer",
+        "n_mac_ops": 45902462976,
+        "compute_energy_pj": 211151329689.59998,
+        "memory_energy_pj": 5474112000.0,
+        "total_energy_pj": 216625441689.59998,
+        "total_energy_mj": 216.62544168959997,
+        "total_energy_uj": 216625.44168959997
+      },
+      "comparison": {
+        "transformer_total_pj": 216625441689.59998,
+        "snn_total_pj": 442699.01399999997,
+        "energy_ratio": 489328.9454889095,
+        "energy_savings_pct": 99.99979563849448,
+        "snn_is_cheaper": true,
+        "compute_only_ratio": 1169455.406681469,
+        "memory_penalty": 0.00012101244800951067
+      }
+    },
+    "population": {
+      "snn_energy": {
+        "model": "snn",
+        "n_sop_per_sample": 129856715.36387809,
+        "sparsity": 0.24827301502227783,
+        "active_fraction": 0.7517269849777222,
+        "compute_energy_pj": 116871043.82749029,
+        "memory_energy_pj": 9853035.9375,
+        "total_energy_pj": 126724079.76499029,
+        "total_energy_uj": 126.72407976499028,
+        "total_energy_mj": 0.12672407976499028
+      },
+      "transformer_energy": {
+        "model": "transformer",
+        "n_mac_ops": 45902462976,
+        "compute_energy_pj": 211151329689.59998,
+        "memory_energy_pj": 5474112000.0,
+        "total_energy_pj": 216625441689.59998,
+        "total_energy_mj": 216.62544168959997,
+        "total_energy_uj": 216625.44168959997
+      },
+      "comparison": {
+        "transformer_total_pj": 216625441689.59998,
+        "snn_total_pj": 126724079.76499029,
+        "energy_ratio": 1709.4260387712557,
+        "energy_savings_pct": 99.9415008326,
+        "snn_is_cheaper": true,
+        "compute_only_ratio": 1806.7035492664368,
+        "memory_penalty": 0.004548420472059924
+      }
+    },
+    "binary_threshold": {
+      "snn_energy": {
+        "model": "snn",
+        "n_sop_per_sample": 7420670.750424804,
+        "sparsity": 0.5000052452087402,
+        "active_fraction": 0.49999475479125977,
+        "compute_energy_pj": 6678603.675382324,
+        "memory_energy_pj": 6553531.25,
+        "total_energy_pj": 13232134.925382324,
+        "total_energy_uj": 13.232134925382324,
+        "total_energy_mj": 0.013232134925382324
+      },
+      "transformer_energy": {
+        "model": "transformer",
+        "n_mac_ops": 45902462976,
+        "compute_energy_pj": 211151329689.59998,
+        "memory_energy_pj": 5474112000.0,
+        "total_energy_pj": 216625441689.59998,
+        "total_energy_mj": 216.62544168959997,
+        "total_energy_uj": 216625.44168959997
+      },
+      "comparison": {
+        "transformer_total_pj": 216625441689.59998,
+        "snn_total_pj": 13232134.925382324,
+        "energy_ratio": 16371.163301400578,
+        "energy_savings_pct": 99.9938916985825,
+        "snn_is_cheaper": true,
+        "compute_only_ratio": 31616.089223547526,
+        "memory_penalty": 0.0030252823485943433
+      }
+    }
+  },
+  "domain_shift": null
+}

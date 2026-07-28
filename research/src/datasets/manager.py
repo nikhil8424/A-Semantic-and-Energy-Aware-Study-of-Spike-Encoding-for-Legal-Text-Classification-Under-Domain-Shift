@@ -9,6 +9,7 @@ import json
 import hashlib
 import logging
 import pickle
+import ast
 from pathlib import Path
 from typing import Any, Optional
 from datetime import datetime
@@ -228,7 +229,6 @@ class DatasetManager:
         for _, row in df.iterrows():
             label = row[label_col]
             if isinstance(label, str) and label.startswith("["):
-                import ast
                 label = ast.literal_eval(label)
             rows.append({"text": str(row[text_col]), "label": label})
 

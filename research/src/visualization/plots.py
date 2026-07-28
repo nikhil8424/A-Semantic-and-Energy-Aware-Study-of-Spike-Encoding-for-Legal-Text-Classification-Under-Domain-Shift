@@ -90,7 +90,8 @@ class ResearchPlotter:
         ax.set_xticklabels(names, rotation=30, ha="right")
         ax.set_ylabel(metric.replace("_", " ").title())
         ax.set_title(title)
-        ax.set_ylim(0, min(1.0, max(values) * 1.2))
+        ymax = max(values) if values else 0
+        ax.set_ylim(0, min(1.0, ymax * 1.2) if ymax > 0 else 1.0)
 
         plt.tight_layout()
         path = self._save(fig, filename)
@@ -279,7 +280,8 @@ class ResearchPlotter:
                     f"{val:.3f}", va="center", fontsize=8,
                 )
             ax.set_title(metric_label, fontsize=10)
-            ax.set_xlim(0, max(max(values) * 1.2, 0.1))
+            xmax = max(values) if values else 0
+            ax.set_xlim(0, max(xmax * 1.2, 0.1) if xmax > 0 else 0.1)
             ax.set_xlabel("Score")
 
         fig.suptitle("Semantic Preservation by Encoding Method", fontsize=13)

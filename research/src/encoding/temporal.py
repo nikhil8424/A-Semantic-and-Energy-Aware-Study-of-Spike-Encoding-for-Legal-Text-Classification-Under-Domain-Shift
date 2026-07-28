@@ -61,8 +61,8 @@ class TemporalEncoder(BaseSpikeEncoder):
         time_indices = (bins * self.time_steps // self.n_levels).astype(int)
         time_indices = np.clip(time_indices, 0, self.time_steps - 1)
 
-        for b in range(batch):
-            for f in range(features):
-                spikes[b, time_indices[b, f], f] = 1.0
+        # Vectorized: use advanced indexing to set spikes
+        batch_indices, feature_indices = np.indices((batch, features))
+        spikes[batch_indices, time_indices, feature_indices] = 1.0
 
         return spikes

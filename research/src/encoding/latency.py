@@ -60,10 +60,10 @@ class LatencyEncoder(BaseSpikeEncoder):
         # Mask features below threshold (they produce no spike)
         no_spike_mask = x < self.threshold
 
-        for b in range(batch):
-            for f in range(features):
-                if not no_spike_mask[b, f]:
-                    t = spike_times[b, f]
-                    spikes[b, t, f] = 1.0
+        # Vectorized: use advanced indexing to set spikes
+        valid_mask = ~no_spike_mask
+        batch_indices, feature_indices = np.where(valid_mask)
+        time_indices = spike_times[batch_indices, feature_indices]
+        spikes[batch_indices, time_indices, feature_indices] = 1.0
 
         return spikes

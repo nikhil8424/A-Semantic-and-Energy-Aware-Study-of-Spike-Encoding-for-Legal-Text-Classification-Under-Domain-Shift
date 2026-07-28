@@ -121,7 +121,7 @@ class SimpleSNNFallback(nn.Module):
             nn.Linear(hidden_size // 2, num_classes),
         )
 
-    def forward(self, x: torch.Tensor) -> torch.Tensor:
+    def forward(self, x: torch.Tensor) -> tuple[torch.Tensor, None]:
         # x: (time_steps, batch, features) → integrate over time
         rate = x.mean(dim=0)  # (batch, features)
         return self.net(rate), None
@@ -308,10 +308,15 @@ class SNNClassifier:
         # Layer sizes: input → hidden → ... → hidden → output
         layer_sizes = [features] + [hidden] * n_layers + [self.num_classes]
         total_sops_per_sample = 0
+        
+        # Compute actual input firing rate (spikes per time step per feature)
+        input_firing_rate = avg_spikes_per_sample / (spike_trains.shape[1] * spike_trains.shape[2])
+        
         for i in range(len(layer_sizes) - 1):
             # SOPs = spikes_at_layer_i × fan_out
-            # For input layer: spikes = avg_spikes_per_sample / T (rate)
-            spikes_at_layer = avg_spikes_per_sample if i == 0 else avg_spikes_per_sample * 0.3
+            # For input layer: spikes = avg_spikes_per_sample
+            # For hidden layers: estimate based on input firing rate
+            spikes_at_layer = avg_spikes_per_sample if i == 0 else avg_spikes_per_sample * input_firing_rate
             total_sops_per_sample += spikes_at_layer * layer_sizes[i + 1]
 
         return {

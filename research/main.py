@@ -46,7 +46,7 @@ for d in [
     "storage/results/figures",
     "storage/results/reports",
 ]:
-    Path(d).mkdir(parents=True, exist_ok=True)
+    (ROOT / d).mkdir(parents=True, exist_ok=True)
 
 
 def setup_logging(level: str = "INFO"):

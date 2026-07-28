@@ -116,3 +116,1096 @@ If the dataset is based on a loading script, please ask the dataset author to re
 19:10:47 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/refs%2Fpr%2F1/model.safetensors.index.json "HTTP/1.1 404 Not Found"
 19:10:47 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/refs%2Fpr%2F1/model.safetensors "HTTP/1.1 302 Found"
 19:11:45 [INFO] src.models.transformer_baseline — Training logistic regression probe…
+22:21:24 [INFO] src.experiments.pipeline — ============================================================
+22:21:24 [INFO] src.experiments.pipeline — SPIKE-LEGAL-NLP EXPERIMENT PIPELINE
+22:21:24 [INFO] src.experiments.pipeline — ============================================================
+22:21:24 [INFO] src.experiments.pipeline — Dataset:     case_hold
+22:21:24 [INFO] src.experiments.pipeline — Transformer: legal_bert
+22:21:24 [INFO] src.experiments.pipeline — Encodings:   ['poisson_rate', 'latency', 'temporal', 'population', 'binary_threshold']
+22:21:24 [INFO] src.experiments.pipeline — ============================================================
+22:21:24 [INFO] src.experiments.pipeline — 
+[Stage 1/8] Loading dataset…
+22:21:28 [INFO] src.datasets.manager — Loading 'case_hold' from cache: storage\datasets\cache\case_hold.pkl
+22:21:29 [INFO] src.experiments.pipeline — 
+[Stage 2/8] Extracting transformer embeddings…
+22:22:50 [INFO] src.experiments.pipeline —   Extracting train embeddings (500 samples)…
+22:22:50 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_train.pkl
+22:22:50 [INFO] src.experiments.pipeline —   Extracting test embeddings (200 samples)…
+22:22:50 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_test.pkl
+22:22:50 [INFO] src.experiments.pipeline —   Extracting validation embeddings (100 samples)…
+22:22:50 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_validation.pkl
+22:22:50 [INFO] src.experiments.pipeline — 
+[Stage 3/8] Generating spike trains…
+22:22:50 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding train split (500 samples)…
+22:22:50 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding test split (200 samples)…
+22:22:51 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding validation split (100 samples)…
+22:22:51 [INFO] src.experiments.pipeline —   [latency] Encoding train split (500 samples)…
+22:22:51 [INFO] src.experiments.pipeline —   [latency] Encoding test split (200 samples)…
+22:22:51 [INFO] src.experiments.pipeline —   [latency] Encoding validation split (100 samples)…
+22:22:51 [INFO] src.experiments.pipeline —   [temporal] Encoding train split (500 samples)…
+22:22:51 [INFO] src.experiments.pipeline —   [temporal] Encoding test split (200 samples)…
+22:22:51 [INFO] src.experiments.pipeline —   [temporal] Encoding validation split (100 samples)…
+22:22:51 [INFO] src.experiments.pipeline —   [population] Encoding train split (500 samples)…
+22:22:53 [INFO] src.experiments.pipeline —   [population] Encoding test split (200 samples)…
+22:22:53 [INFO] src.experiments.pipeline —   [population] Encoding validation split (100 samples)…
+22:22:54 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding train split (500 samples)…
+22:22:54 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding test split (200 samples)…
+22:22:54 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding validation split (100 samples)…
+22:22:54 [INFO] src.experiments.pipeline — 
+[Stage 4/8] Evaluating transformer baseline…
+22:22:54 [INFO] src.models.transformer_baseline — Extracting train embeddings [legal_bert]
+22:22:54 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_train.pkl
+22:22:54 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_val.pkl
+22:22:54 [INFO] src.models.transformer_baseline — Training logistic regression probe…
+22:24:23 [INFO] src.experiments.pipeline — ============================================================
+22:24:23 [INFO] src.experiments.pipeline — SPIKE-LEGAL-NLP EXPERIMENT PIPELINE
+22:24:23 [INFO] src.experiments.pipeline — ============================================================
+22:24:23 [INFO] src.experiments.pipeline — Dataset:     case_hold
+22:24:23 [INFO] src.experiments.pipeline — Transformer: legal_bert
+22:24:23 [INFO] src.experiments.pipeline — Encodings:   ['poisson_rate', 'latency', 'temporal', 'population', 'binary_threshold']
+22:24:23 [INFO] src.experiments.pipeline — ============================================================
+22:24:23 [INFO] src.experiments.pipeline — 
+[Stage 1/8] Loading dataset…
+22:24:24 [INFO] src.datasets.manager — Loading 'case_hold' from cache: storage\datasets\cache\case_hold.pkl
+22:24:24 [INFO] src.experiments.pipeline — 
+[Stage 2/8] Extracting transformer embeddings…
+22:24:44 [INFO] src.experiments.pipeline —   Extracting train embeddings (500 samples)…
+22:24:44 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_train.pkl
+22:24:44 [INFO] src.experiments.pipeline —   Extracting test embeddings (200 samples)…
+22:24:44 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_test.pkl
+22:24:44 [INFO] src.experiments.pipeline —   Extracting validation embeddings (100 samples)…
+22:24:44 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_validation.pkl
+22:24:44 [INFO] src.experiments.pipeline — 
+[Stage 3/8] Generating spike trains…
+22:24:44 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding train split (500 samples)…
+22:24:44 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=24.57%
+22:24:44 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding test split (200 samples)…
+22:24:44 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=23.65%
+22:24:44 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding validation split (100 samples)…
+22:24:44 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=23.92%
+22:24:44 [INFO] src.experiments.pipeline —   [latency] Encoding train split (500 samples)…
+22:24:44 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=98.00%
+22:24:44 [INFO] src.experiments.pipeline —   [latency] Encoding test split (200 samples)…
+22:24:44 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=98.00%
+22:24:44 [INFO] src.experiments.pipeline —   [latency] Encoding validation split (100 samples)…
+22:24:45 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=98.00%
+22:24:45 [INFO] src.experiments.pipeline —   [temporal] Encoding train split (500 samples)…
+22:24:45 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=98.00%
+22:24:45 [INFO] src.experiments.pipeline —   [temporal] Encoding test split (200 samples)…
+22:24:45 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=98.00%
+22:24:45 [INFO] src.experiments.pipeline —   [temporal] Encoding validation split (100 samples)…
+22:24:45 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=98.00%
+22:24:45 [INFO] src.experiments.pipeline —   [population] Encoding train split (500 samples)…
+22:24:46 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 7680), sparsity=24.82%
+22:24:46 [INFO] src.experiments.pipeline —   [population] Encoding test split (200 samples)…
+22:24:47 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 7680), sparsity=25.38%
+22:24:47 [INFO] src.experiments.pipeline —   [population] Encoding validation split (100 samples)…
+22:24:47 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 7680), sparsity=25.18%
+22:24:47 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding train split (500 samples)…
+22:24:47 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=50.00%
+22:24:47 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding test split (200 samples)…
+22:24:47 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=50.00%
+22:24:47 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding validation split (100 samples)…
+22:24:47 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=50.00%
+22:24:47 [INFO] src.experiments.pipeline — 
+[Stage 4/8] Evaluating transformer baseline…
+22:24:47 [INFO] src.models.transformer_baseline — Extracting train embeddings [legal_bert]
+22:24:47 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_train.pkl
+22:24:47 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_val.pkl
+22:24:47 [INFO] src.models.transformer_baseline — Training logistic regression probe…
+22:24:48 [INFO] src.models.transformer_baseline — [legal_bert] acc=0.1700 f1_macro=0.1699
+22:24:48 [INFO] src.experiments.pipeline — 
+[Stage 5/8] Training SNN classifiers…
+22:24:48 [INFO] src.experiments.pipeline —   Training SNN [poisson_rate] n_train=500…
+22:24:50 [INFO] src.models.snn_model — Epoch 1/10 loss=1.8560 train_acc=0.2020 val_acc=0.2200
+22:24:52 [INFO] src.models.snn_model — Epoch 2/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:24:55 [INFO] src.models.snn_model — Epoch 3/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:24:57 [INFO] src.models.snn_model — Epoch 4/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:24:59 [INFO] src.models.snn_model — Epoch 5/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:25:01 [INFO] src.models.snn_model — Epoch 6/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:25:03 [INFO] src.models.snn_model — Epoch 7/10 loss=1.6111 train_acc=0.2080 val_acc=0.2200
+22:25:05 [INFO] src.models.snn_model — Epoch 8/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:25:07 [INFO] src.models.snn_model — Epoch 9/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:25:09 [INFO] src.models.snn_model — Epoch 10/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:25:09 [INFO] src.experiments.pipeline —   Training SNN [latency] n_train=500…
+22:25:12 [INFO] src.models.snn_model — Epoch 1/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:25:14 [INFO] src.models.snn_model — Epoch 2/10 loss=1.6104 train_acc=0.2000 val_acc=0.2200
+22:25:16 [INFO] src.models.snn_model — Epoch 3/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:25:18 [INFO] src.models.snn_model — Epoch 4/10 loss=1.6104 train_acc=0.2020 val_acc=0.2200
+22:25:20 [INFO] src.models.snn_model — Epoch 5/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:25:22 [INFO] src.models.snn_model — Epoch 6/10 loss=1.6078 train_acc=0.2080 val_acc=0.2200
+22:25:24 [INFO] src.models.snn_model — Epoch 7/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:25:26 [INFO] src.models.snn_model — Epoch 8/10 loss=1.6086 train_acc=0.2040 val_acc=0.2200
+22:25:28 [INFO] src.models.snn_model — Epoch 9/10 loss=1.6113 train_acc=0.2000 val_acc=0.2200
+22:25:30 [INFO] src.models.snn_model — Epoch 10/10 loss=1.6136 train_acc=0.2200 val_acc=0.2200
+22:25:31 [INFO] src.experiments.pipeline —   Training SNN [temporal] n_train=500…
+22:25:33 [INFO] src.models.snn_model — Epoch 1/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:25:35 [INFO] src.models.snn_model — Epoch 2/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:25:37 [INFO] src.models.snn_model — Epoch 3/10 loss=1.6117 train_acc=0.1980 val_acc=0.2200
+22:25:39 [INFO] src.models.snn_model — Epoch 4/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:25:41 [INFO] src.models.snn_model — Epoch 5/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:25:43 [INFO] src.models.snn_model — Epoch 6/10 loss=1.6100 train_acc=0.2020 val_acc=0.2200
+22:25:45 [INFO] src.models.snn_model — Epoch 7/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:25:47 [INFO] src.models.snn_model — Epoch 8/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:25:49 [INFO] src.models.snn_model — Epoch 9/10 loss=1.6141 train_acc=0.2000 val_acc=0.2200
+22:25:51 [INFO] src.models.snn_model — Epoch 10/10 loss=1.6092 train_acc=0.2040 val_acc=0.2200
+22:25:52 [INFO] src.experiments.pipeline —   Training SNN [population] n_train=500…
+22:25:59 [INFO] src.models.snn_model — Epoch 1/10 loss=2.0071 train_acc=0.1860 val_acc=0.2200
+22:26:06 [INFO] src.models.snn_model — Epoch 2/10 loss=1.6112 train_acc=0.2020 val_acc=0.2200
+22:26:14 [INFO] src.models.snn_model — Epoch 3/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:26:21 [INFO] src.models.snn_model — Epoch 4/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:26:28 [INFO] src.models.snn_model — Epoch 5/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:26:35 [INFO] src.models.snn_model — Epoch 6/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:26:42 [INFO] src.models.snn_model — Epoch 7/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:26:49 [INFO] src.models.snn_model — Epoch 8/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:26:57 [INFO] src.models.snn_model — Epoch 9/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:27:04 [INFO] src.models.snn_model — Epoch 10/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:27:04 [INFO] src.experiments.pipeline —   Training SNN [binary_threshold] n_train=500…
+22:27:06 [INFO] src.models.snn_model — Epoch 1/10 loss=1.6117 train_acc=0.1980 val_acc=0.2200
+22:27:08 [INFO] src.models.snn_model — Epoch 2/10 loss=1.6094 train_acc=0.2020 val_acc=0.2000
+22:27:10 [INFO] src.models.snn_model — Epoch 3/10 loss=1.6679 train_acc=0.2160 val_acc=0.2200
+22:27:12 [INFO] src.models.snn_model — Epoch 4/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:27:14 [INFO] src.models.snn_model — Epoch 5/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:27:16 [INFO] src.models.snn_model — Epoch 6/10 loss=1.7588 train_acc=0.2180 val_acc=0.2200
+22:27:18 [INFO] src.models.snn_model — Epoch 7/10 loss=1.6143 train_acc=0.2020 val_acc=0.2200
+22:27:21 [INFO] src.models.snn_model — Epoch 8/10 loss=1.9628 train_acc=0.2080 val_acc=0.2200
+22:27:23 [INFO] src.models.snn_model — Epoch 9/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:27:25 [INFO] src.models.snn_model — Epoch 10/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:27:25 [INFO] src.experiments.pipeline — 
+[Stage 6/8] Semantic preservation analysis…
+22:28:10 [INFO] src.experiments.pipeline — ============================================================
+22:28:10 [INFO] src.experiments.pipeline — SPIKE-LEGAL-NLP EXPERIMENT PIPELINE
+22:28:10 [INFO] src.experiments.pipeline — ============================================================
+22:28:10 [INFO] src.experiments.pipeline — Dataset:     case_hold
+22:28:10 [INFO] src.experiments.pipeline — Transformer: legal_bert
+22:28:10 [INFO] src.experiments.pipeline — Encodings:   ['poisson_rate', 'latency', 'temporal', 'population', 'binary_threshold']
+22:28:10 [INFO] src.experiments.pipeline — ============================================================
+22:28:10 [INFO] src.experiments.pipeline — 
+[Stage 1/8] Loading dataset…
+22:28:10 [INFO] src.datasets.manager — Loading 'case_hold' from cache: storage\datasets\cache\case_hold.pkl
+22:28:11 [INFO] src.experiments.pipeline — 
+[Stage 2/8] Extracting transformer embeddings…
+22:28:20 [INFO] src.experiments.pipeline —   Extracting train embeddings (500 samples)…
+22:28:20 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_train.pkl
+22:28:20 [INFO] src.experiments.pipeline —   Extracting test embeddings (200 samples)…
+22:28:20 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_test.pkl
+22:28:20 [INFO] src.experiments.pipeline —   Extracting validation embeddings (100 samples)…
+22:28:20 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_validation.pkl
+22:28:20 [INFO] src.experiments.pipeline — 
+[Stage 3/8] Generating spike trains…
+22:28:20 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding train split (500 samples)…
+22:28:20 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=24.55%
+22:28:20 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding test split (200 samples)…
+22:28:20 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=23.66%
+22:28:20 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding validation split (100 samples)…
+22:28:20 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=23.89%
+22:28:20 [INFO] src.experiments.pipeline —   [latency] Encoding train split (500 samples)…
+22:28:20 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=98.00%
+22:28:20 [INFO] src.experiments.pipeline —   [latency] Encoding test split (200 samples)…
+22:28:20 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=98.00%
+22:28:20 [INFO] src.experiments.pipeline —   [latency] Encoding validation split (100 samples)…
+22:28:20 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=98.00%
+22:28:20 [INFO] src.experiments.pipeline —   [temporal] Encoding train split (500 samples)…
+22:28:20 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=98.00%
+22:28:20 [INFO] src.experiments.pipeline —   [temporal] Encoding test split (200 samples)…
+22:28:20 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=98.00%
+22:28:20 [INFO] src.experiments.pipeline —   [temporal] Encoding validation split (100 samples)…
+22:28:20 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=98.00%
+22:28:20 [INFO] src.experiments.pipeline —   [population] Encoding train split (500 samples)…
+22:28:22 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 7680), sparsity=24.83%
+22:28:22 [INFO] src.experiments.pipeline —   [population] Encoding test split (200 samples)…
+22:28:22 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 7680), sparsity=25.38%
+22:28:22 [INFO] src.experiments.pipeline —   [population] Encoding validation split (100 samples)…
+22:28:23 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 7680), sparsity=25.19%
+22:28:23 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding train split (500 samples)…
+22:28:23 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=50.00%
+22:28:23 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding test split (200 samples)…
+22:28:23 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=50.00%
+22:28:23 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding validation split (100 samples)…
+22:28:23 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=50.00%
+22:28:23 [INFO] src.experiments.pipeline — 
+[Stage 4/8] Evaluating transformer baseline…
+22:28:23 [INFO] src.models.transformer_baseline — Extracting train embeddings [legal_bert]
+22:28:23 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_train.pkl
+22:28:23 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_val.pkl
+22:28:23 [INFO] src.models.transformer_baseline — Training logistic regression probe…
+22:28:24 [INFO] src.models.transformer_baseline — [legal_bert] acc=0.1700 f1_macro=0.1699
+22:28:24 [INFO] src.experiments.pipeline — 
+[Stage 5/8] Training SNN classifiers…
+22:28:24 [INFO] src.experiments.pipeline —   Training SNN [poisson_rate] n_train=500…
+22:28:26 [INFO] src.models.snn_model — Epoch 1/10 loss=1.7313 train_acc=0.2060 val_acc=0.2200
+22:28:28 [INFO] src.models.snn_model — Epoch 2/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:28:30 [INFO] src.models.snn_model — Epoch 3/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:28:32 [INFO] src.models.snn_model — Epoch 4/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:28:34 [INFO] src.models.snn_model — Epoch 5/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:28:36 [INFO] src.models.snn_model — Epoch 6/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:28:39 [INFO] src.models.snn_model — Epoch 7/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:28:41 [INFO] src.models.snn_model — Epoch 8/10 loss=1.6433 train_acc=0.1920 val_acc=0.2200
+22:28:43 [INFO] src.models.snn_model — Epoch 9/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:28:46 [INFO] src.models.snn_model — Epoch 10/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:28:46 [INFO] src.experiments.pipeline —   Training SNN [latency] n_train=500…
+22:28:48 [INFO] src.models.snn_model — Epoch 1/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:28:50 [INFO] src.models.snn_model — Epoch 2/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:28:52 [INFO] src.models.snn_model — Epoch 3/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:28:54 [INFO] src.models.snn_model — Epoch 4/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:28:56 [INFO] src.models.snn_model — Epoch 5/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:28:58 [INFO] src.models.snn_model — Epoch 6/10 loss=1.6236 train_acc=0.2020 val_acc=0.2200
+22:29:00 [INFO] src.models.snn_model — Epoch 7/10 loss=1.6180 train_acc=0.1920 val_acc=0.2200
+22:29:01 [INFO] src.models.snn_model — Epoch 8/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:29:03 [INFO] src.models.snn_model — Epoch 9/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:29:05 [INFO] src.models.snn_model — Epoch 10/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:29:05 [INFO] src.experiments.pipeline —   Training SNN [temporal] n_train=500…
+22:29:07 [INFO] src.models.snn_model — Epoch 1/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:29:09 [INFO] src.models.snn_model — Epoch 2/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:29:11 [INFO] src.models.snn_model — Epoch 3/10 loss=1.6104 train_acc=0.2020 val_acc=0.2200
+22:29:13 [INFO] src.models.snn_model — Epoch 4/10 loss=1.6252 train_acc=0.2080 val_acc=0.2200
+22:29:14 [INFO] src.models.snn_model — Epoch 5/10 loss=1.6159 train_acc=0.2040 val_acc=0.2200
+22:29:16 [INFO] src.models.snn_model — Epoch 6/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:29:18 [INFO] src.models.snn_model — Epoch 7/10 loss=1.6075 train_acc=0.2060 val_acc=0.2300
+22:29:20 [INFO] src.models.snn_model — Epoch 8/10 loss=1.6071 train_acc=0.2280 val_acc=0.2300
+22:29:22 [INFO] src.models.snn_model — Epoch 9/10 loss=1.6037 train_acc=0.2100 val_acc=0.2200
+22:29:24 [INFO] src.models.snn_model — Epoch 10/10 loss=1.5917 train_acc=0.2340 val_acc=0.2300
+22:29:24 [INFO] src.experiments.pipeline —   Training SNN [population] n_train=500…
+22:29:31 [INFO] src.models.snn_model — Epoch 1/10 loss=1.6521 train_acc=0.2020 val_acc=0.2200
+22:29:38 [INFO] src.models.snn_model — Epoch 2/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:29:44 [INFO] src.models.snn_model — Epoch 3/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:29:51 [INFO] src.models.snn_model — Epoch 4/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:29:58 [INFO] src.models.snn_model — Epoch 5/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:30:04 [INFO] src.models.snn_model — Epoch 6/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:30:11 [INFO] src.models.snn_model — Epoch 7/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:30:17 [INFO] src.models.snn_model — Epoch 8/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:30:24 [INFO] src.models.snn_model — Epoch 9/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:30:30 [INFO] src.models.snn_model — Epoch 10/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:30:31 [INFO] src.experiments.pipeline —   Training SNN [binary_threshold] n_train=500…
+22:30:33 [INFO] src.models.snn_model — Epoch 1/10 loss=1.7852 train_acc=0.2220 val_acc=0.2200
+22:30:35 [INFO] src.models.snn_model — Epoch 2/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:30:36 [INFO] src.models.snn_model — Epoch 3/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:30:38 [INFO] src.models.snn_model — Epoch 4/10 loss=1.6051 train_acc=0.2080 val_acc=0.2200
+22:30:40 [INFO] src.models.snn_model — Epoch 5/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:30:42 [INFO] src.models.snn_model — Epoch 6/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:30:44 [INFO] src.models.snn_model — Epoch 7/10 loss=1.6136 train_acc=0.2040 val_acc=0.2200
+22:30:46 [INFO] src.models.snn_model — Epoch 8/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:30:48 [INFO] src.models.snn_model — Epoch 9/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:30:50 [INFO] src.models.snn_model — Epoch 10/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:30:50 [INFO] src.experiments.pipeline — 
+[Stage 6/8] Semantic preservation analysis…
+22:30:50 [INFO] src.evaluation.semantic — [poisson_rate] cosine=0.0349 spearman=0.8725 kendall=0.6489
+22:30:50 [INFO] src.evaluation.semantic — [latency] cosine=-0.0091 spearman=0.8157 kendall=0.6539
+22:30:50 [INFO] src.evaluation.semantic — [temporal] cosine=-0.0299 spearman=nan kendall=nan
+22:30:50 [INFO] src.evaluation.semantic — [population] cosine=-0.0417 spearman=0.8552 kendall=0.6367
+22:30:51 [INFO] src.evaluation.semantic — [binary_threshold] cosine=0.3912 spearman=0.9060 kendall=0.7653
+22:30:51 [INFO] src.experiments.pipeline — 
+[Stage 7/8] Energy analysis…
+22:30:51 [INFO] src.models.transformer_baseline — Loading tokenizer: nlpaueb/legal-bert-base-uncased
+22:30:52 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+22:30:52 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/config.json "HTTP/1.1 200 OK"
+22:30:52 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+22:30:53 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/tokenizer_config.json "HTTP/1.1 200 OK"
+22:30:53 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+22:30:54 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+22:30:54 [INFO] src.models.transformer_baseline — Loading base model for embedding extraction
+22:30:54 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+22:30:54 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/config.json "HTTP/1.1 200 OK"
+22:30:56 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+22:30:56 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased "HTTP/1.1 200 OK"
+22:30:57 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/commits/main "HTTP/1.1 200 OK"
+22:30:57 [INFO] src.models.transformer_baseline — Model loaded on cpu
+22:30:57 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/discussions?p=0 "HTTP/1.1 200 OK"
+22:30:57 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/commits/refs%2Fpr%2F1 "HTTP/1.1 200 OK"
+22:30:58 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/refs%2Fpr%2F1/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+22:30:58 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/refs%2Fpr%2F1/model.safetensors "HTTP/1.1 302 Found"
+22:32:00 [INFO] src.experiments.pipeline — ============================================================
+22:32:00 [INFO] src.experiments.pipeline — SPIKE-LEGAL-NLP EXPERIMENT PIPELINE
+22:32:00 [INFO] src.experiments.pipeline — ============================================================
+22:32:00 [INFO] src.experiments.pipeline — Dataset:     case_hold
+22:32:00 [INFO] src.experiments.pipeline — Transformer: legal_bert
+22:32:00 [INFO] src.experiments.pipeline — Encodings:   ['poisson_rate', 'latency', 'temporal', 'population', 'binary_threshold']
+22:32:00 [INFO] src.experiments.pipeline — ============================================================
+22:32:00 [INFO] src.experiments.pipeline — 
+[Stage 1/8] Loading dataset…
+22:32:00 [INFO] src.datasets.manager — Loading 'case_hold' from cache: storage\datasets\cache\case_hold.pkl
+22:32:01 [INFO] src.experiments.pipeline — 
+[Stage 2/8] Extracting transformer embeddings…
+22:32:09 [INFO] src.experiments.pipeline —   Extracting train embeddings (500 samples)…
+22:32:09 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_train.pkl
+22:32:09 [INFO] src.experiments.pipeline —   Extracting test embeddings (200 samples)…
+22:32:09 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_test.pkl
+22:32:09 [INFO] src.experiments.pipeline —   Extracting validation embeddings (100 samples)…
+22:32:09 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_validation.pkl
+22:32:09 [INFO] src.experiments.pipeline — 
+[Stage 3/8] Generating spike trains…
+22:32:09 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding train split (500 samples)…
+22:32:09 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=24.55%
+22:32:09 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding test split (200 samples)…
+22:32:09 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=23.64%
+22:32:09 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding validation split (100 samples)…
+22:32:09 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=23.93%
+22:32:09 [INFO] src.experiments.pipeline —   [latency] Encoding train split (500 samples)…
+22:32:09 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=98.00%
+22:32:09 [INFO] src.experiments.pipeline —   [latency] Encoding test split (200 samples)…
+22:32:09 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=98.00%
+22:32:09 [INFO] src.experiments.pipeline —   [latency] Encoding validation split (100 samples)…
+22:32:09 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=98.00%
+22:32:09 [INFO] src.experiments.pipeline —   [temporal] Encoding train split (500 samples)…
+22:32:09 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=98.00%
+22:32:09 [INFO] src.experiments.pipeline —   [temporal] Encoding test split (200 samples)…
+22:32:09 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=98.00%
+22:32:09 [INFO] src.experiments.pipeline —   [temporal] Encoding validation split (100 samples)…
+22:32:09 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=98.00%
+22:32:09 [INFO] src.experiments.pipeline —   [population] Encoding train split (500 samples)…
+22:32:11 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 7680), sparsity=24.83%
+22:32:11 [INFO] src.experiments.pipeline —   [population] Encoding test split (200 samples)…
+22:32:12 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 7680), sparsity=25.38%
+22:32:12 [INFO] src.experiments.pipeline —   [population] Encoding validation split (100 samples)…
+22:32:12 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 7680), sparsity=25.19%
+22:32:12 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding train split (500 samples)…
+22:32:12 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=50.00%
+22:32:12 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding test split (200 samples)…
+22:32:12 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=50.00%
+22:32:12 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding validation split (100 samples)…
+22:32:12 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=50.00%
+22:32:12 [INFO] src.experiments.pipeline — 
+[Stage 4/8] Evaluating transformer baseline…
+22:32:12 [INFO] src.models.transformer_baseline — Extracting train embeddings [legal_bert]
+22:32:12 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_train.pkl
+22:32:12 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_val.pkl
+22:32:12 [INFO] src.models.transformer_baseline — Training logistic regression probe…
+22:32:12 [INFO] src.models.transformer_baseline — [legal_bert] acc=0.1700 f1_macro=0.1699
+22:32:12 [INFO] src.experiments.pipeline — 
+[Stage 5/8] Training SNN classifiers…
+22:32:12 [INFO] src.experiments.pipeline —   Training SNN [poisson_rate] n_train=500…
+22:32:14 [INFO] src.models.snn_model — Epoch 1/10 loss=2.2770 train_acc=0.1920 val_acc=0.2200
+22:32:16 [INFO] src.models.snn_model — Epoch 2/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:32:18 [INFO] src.models.snn_model — Epoch 3/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:32:20 [INFO] src.models.snn_model — Epoch 4/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:32:22 [INFO] src.models.snn_model — Epoch 5/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:32:24 [INFO] src.models.snn_model — Epoch 6/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:32:26 [INFO] src.models.snn_model — Epoch 7/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:32:27 [INFO] src.models.snn_model — Epoch 8/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:32:29 [INFO] src.models.snn_model — Epoch 9/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:32:31 [INFO] src.models.snn_model — Epoch 10/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:32:31 [INFO] src.experiments.pipeline —   Training SNN [latency] n_train=500…
+22:32:33 [INFO] src.models.snn_model — Epoch 1/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:32:35 [INFO] src.models.snn_model — Epoch 2/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:32:37 [INFO] src.models.snn_model — Epoch 3/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:32:38 [INFO] src.models.snn_model — Epoch 4/10 loss=1.6100 train_acc=0.2020 val_acc=0.2200
+22:32:40 [INFO] src.models.snn_model — Epoch 5/10 loss=1.6100 train_acc=0.2020 val_acc=0.2200
+22:32:42 [INFO] src.models.snn_model — Epoch 6/10 loss=1.6188 train_acc=0.2100 val_acc=0.2200
+22:32:44 [INFO] src.models.snn_model — Epoch 7/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:32:46 [INFO] src.models.snn_model — Epoch 8/10 loss=1.6100 train_acc=0.2000 val_acc=0.2200
+22:32:48 [INFO] src.models.snn_model — Epoch 9/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:32:49 [INFO] src.models.snn_model — Epoch 10/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:32:50 [INFO] src.experiments.pipeline —   Training SNN [temporal] n_train=500…
+22:32:51 [INFO] src.models.snn_model — Epoch 1/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:32:53 [INFO] src.models.snn_model — Epoch 2/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:32:55 [INFO] src.models.snn_model — Epoch 3/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:32:57 [INFO] src.models.snn_model — Epoch 4/10 loss=1.6081 train_acc=0.2040 val_acc=0.2200
+22:32:59 [INFO] src.models.snn_model — Epoch 5/10 loss=1.6113 train_acc=0.2080 val_acc=0.2200
+22:33:00 [INFO] src.models.snn_model — Epoch 6/10 loss=1.6106 train_acc=0.2020 val_acc=0.2200
+22:33:02 [INFO] src.models.snn_model — Epoch 7/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:33:04 [INFO] src.models.snn_model — Epoch 8/10 loss=1.6100 train_acc=0.2020 val_acc=0.2200
+22:33:06 [INFO] src.models.snn_model — Epoch 9/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:33:08 [INFO] src.models.snn_model — Epoch 10/10 loss=1.6226 train_acc=0.2040 val_acc=0.2200
+22:33:08 [INFO] src.experiments.pipeline —   Training SNN [population] n_train=500…
+22:33:15 [INFO] src.models.snn_model — Epoch 1/10 loss=2.2463 train_acc=0.2100 val_acc=0.2200
+22:33:22 [INFO] src.models.snn_model — Epoch 2/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:33:28 [INFO] src.models.snn_model — Epoch 3/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:33:35 [INFO] src.models.snn_model — Epoch 4/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:33:42 [INFO] src.models.snn_model — Epoch 5/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:33:48 [INFO] src.models.snn_model — Epoch 6/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:33:55 [INFO] src.models.snn_model — Epoch 7/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:34:02 [INFO] src.models.snn_model — Epoch 8/10 loss=1.6163 train_acc=0.2060 val_acc=0.2200
+22:34:08 [INFO] src.models.snn_model — Epoch 9/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:34:15 [INFO] src.models.snn_model — Epoch 10/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:34:15 [INFO] src.experiments.pipeline —   Training SNN [binary_threshold] n_train=500…
+22:34:17 [INFO] src.models.snn_model — Epoch 1/10 loss=1.7422 train_acc=0.1940 val_acc=0.2200
+22:34:19 [INFO] src.models.snn_model — Epoch 2/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:34:21 [INFO] src.models.snn_model — Epoch 3/10 loss=1.6110 train_acc=0.2120 val_acc=0.2200
+22:34:23 [INFO] src.models.snn_model — Epoch 4/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:34:25 [INFO] src.models.snn_model — Epoch 5/10 loss=1.6094 train_acc=0.2020 val_acc=0.2200
+22:34:26 [INFO] src.models.snn_model — Epoch 6/10 loss=1.6035 train_acc=0.2080 val_acc=0.2200
+22:34:28 [INFO] src.models.snn_model — Epoch 7/10 loss=1.6134 train_acc=0.2000 val_acc=0.2200
+22:34:30 [INFO] src.models.snn_model — Epoch 8/10 loss=1.6164 train_acc=0.2120 val_acc=0.2200
+22:34:32 [INFO] src.models.snn_model — Epoch 9/10 loss=1.6175 train_acc=0.2240 val_acc=0.2200
+22:34:34 [INFO] src.models.snn_model — Epoch 10/10 loss=1.6488 train_acc=0.2100 val_acc=0.2600
+22:34:34 [INFO] src.experiments.pipeline — 
+[Stage 6/8] Semantic preservation analysis…
+22:34:34 [INFO] src.evaluation.semantic — [poisson_rate] cosine=0.0351 spearman=0.8804 kendall=0.6517
+22:34:34 [INFO] src.evaluation.semantic — [latency] cosine=-0.0090 spearman=0.8535 kendall=0.7039
+22:34:34 [INFO] src.evaluation.semantic — [temporal] cosine=-0.0297 spearman=nan kendall=nan
+22:34:34 [INFO] src.evaluation.semantic — [population] cosine=-0.0412 spearman=0.7481 kendall=0.6254
+22:34:35 [INFO] src.evaluation.semantic — [binary_threshold] cosine=0.3941 spearman=0.9136 kendall=0.7441
+22:34:35 [INFO] src.experiments.pipeline — 
+[Stage 7/8] Energy analysis…
+22:34:35 [INFO] src.models.transformer_baseline — Loading tokenizer: nlpaueb/legal-bert-base-uncased
+22:34:36 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+22:34:36 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/config.json "HTTP/1.1 200 OK"
+22:34:36 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+22:34:36 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/tokenizer_config.json "HTTP/1.1 200 OK"
+22:34:37 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+22:34:37 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+22:34:37 [INFO] src.models.transformer_baseline — Loading base model for embedding extraction
+22:34:37 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+22:34:37 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/config.json "HTTP/1.1 200 OK"
+22:34:38 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+22:34:39 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased "HTTP/1.1 200 OK"
+22:34:39 [INFO] src.models.transformer_baseline — Model loaded on cpu
+22:34:39 [INFO] src.evaluation.energy — [poisson_rate] energy ratio: 9933.45x savings: 100.0%
+22:34:39 [INFO] src.evaluation.energy — [latency] energy ratio: 489972.20x savings: 100.0%
+22:34:39 [INFO] src.evaluation.energy — [temporal] energy ratio: 489328.95x savings: 100.0%
+22:34:40 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/commits/main "HTTP/1.1 200 OK"
+22:34:40 [INFO] src.evaluation.energy — [population] energy ratio: 1709.36x savings: 99.9%
+22:34:40 [INFO] src.evaluation.energy — [binary_threshold] energy ratio: 16371.16x savings: 100.0%
+22:34:40 [INFO] src.experiments.pipeline — 
+[Stage 8/8] Generating visualizations and report…
+22:34:40 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/discussions?p=0 "HTTP/1.1 200 OK"
+22:34:40 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/commits/refs%2Fpr%2F1 "HTTP/1.1 200 OK"
+22:34:41 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/refs%2Fpr%2F1/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+22:34:41 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/refs%2Fpr%2F1/model.safetensors "HTTP/1.1 302 Found"
+22:34:45 [WARNING] matplotlib.font_manager — Matplotlib is building the font cache; this may take a moment.
+22:34:46 [INFO] matplotlib.font_manager — generated new fontManager
+22:34:52 [INFO] src.experiments.pipeline — 
+============================================================
+22:34:52 [INFO] src.experiments.pipeline — Pipeline complete in 172.4s
+22:34:52 [INFO] src.experiments.pipeline — Report: storage\results\reports\report_case_hold_legal_bert.html
+22:34:52 [INFO] src.experiments.pipeline — ============================================================
+22:38:44 [INFO] src.experiments.pipeline — ============================================================
+22:38:44 [INFO] src.experiments.pipeline — SPIKE-LEGAL-NLP EXPERIMENT PIPELINE
+22:38:44 [INFO] src.experiments.pipeline — ============================================================
+22:38:44 [INFO] src.experiments.pipeline — Dataset:     case_hold
+22:38:44 [INFO] src.experiments.pipeline — Transformer: legal_bert
+22:38:44 [INFO] src.experiments.pipeline — Encodings:   ['poisson_rate', 'latency', 'temporal', 'population', 'binary_threshold']
+22:38:44 [INFO] src.experiments.pipeline — ============================================================
+22:38:44 [INFO] src.experiments.pipeline — 
+[Stage 1/8] Loading dataset…
+22:38:44 [INFO] src.datasets.manager — Loading 'case_hold' from cache: storage\datasets\cache\case_hold.pkl
+22:38:45 [INFO] src.experiments.pipeline — 
+[Stage 2/8] Extracting transformer embeddings…
+22:38:54 [INFO] src.experiments.pipeline —   Extracting train embeddings (100 samples)…
+22:38:54 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_train.pkl
+22:38:54 [INFO] src.experiments.pipeline —   Extracting test embeddings (100 samples)…
+22:38:54 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_test.pkl
+22:38:54 [INFO] src.experiments.pipeline —   Extracting validation embeddings (50 samples)…
+22:38:54 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_validation.pkl
+22:38:54 [INFO] src.experiments.pipeline — 
+[Stage 3/8] Generating spike trains…
+22:38:54 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding train split (500 samples)…
+22:38:54 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=24.53%
+22:38:54 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding test split (200 samples)…
+22:38:54 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=23.65%
+22:38:54 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding validation split (100 samples)…
+22:38:54 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=23.90%
+22:38:54 [INFO] src.experiments.pipeline —   [latency] Encoding train split (500 samples)…
+22:38:54 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=98.00%
+22:38:54 [INFO] src.experiments.pipeline —   [latency] Encoding test split (200 samples)…
+22:38:54 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=98.00%
+22:38:54 [INFO] src.experiments.pipeline —   [latency] Encoding validation split (100 samples)…
+22:38:54 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=98.00%
+22:38:54 [INFO] src.experiments.pipeline —   [temporal] Encoding train split (500 samples)…
+22:38:54 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=98.00%
+22:38:54 [INFO] src.experiments.pipeline —   [temporal] Encoding test split (200 samples)…
+22:38:54 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=98.00%
+22:38:54 [INFO] src.experiments.pipeline —   [temporal] Encoding validation split (100 samples)…
+22:38:54 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=98.00%
+22:38:54 [INFO] src.experiments.pipeline —   [population] Encoding train split (500 samples)…
+22:38:56 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 7680), sparsity=24.82%
+22:38:56 [INFO] src.experiments.pipeline —   [population] Encoding test split (200 samples)…
+22:38:56 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 7680), sparsity=25.38%
+22:38:56 [INFO] src.experiments.pipeline —   [population] Encoding validation split (100 samples)…
+22:38:57 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 7680), sparsity=25.18%
+22:38:57 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding train split (500 samples)…
+22:38:57 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=50.00%
+22:38:57 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding test split (200 samples)…
+22:38:57 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=50.00%
+22:38:57 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding validation split (100 samples)…
+22:38:57 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=50.00%
+22:38:57 [INFO] src.experiments.pipeline — 
+[Stage 4/8] Evaluating transformer baseline…
+22:38:57 [INFO] src.models.transformer_baseline — Extracting train embeddings [legal_bert]
+22:38:57 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_train.pkl
+22:38:57 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_val.pkl
+22:38:57 [INFO] src.models.transformer_baseline — Training logistic regression probe…
+22:40:51 [INFO] src.experiments.pipeline — ============================================================
+22:40:51 [INFO] src.experiments.pipeline — SPIKE-LEGAL-NLP EXPERIMENT PIPELINE
+22:40:51 [INFO] src.experiments.pipeline — ============================================================
+22:40:51 [INFO] src.experiments.pipeline — Dataset:     case_hold
+22:40:51 [INFO] src.experiments.pipeline — Transformer: legal_bert
+22:40:51 [INFO] src.experiments.pipeline — Encodings:   ['poisson_rate', 'latency', 'temporal', 'population', 'binary_threshold']
+22:40:51 [INFO] src.experiments.pipeline — ============================================================
+22:40:51 [INFO] src.experiments.pipeline — 
+[Stage 1/8] Loading dataset…
+22:40:52 [INFO] src.datasets.manager — Loading 'case_hold' from cache: storage\datasets\cache\case_hold.pkl
+22:40:52 [INFO] src.experiments.pipeline — 
+[Stage 2/8] Extracting transformer embeddings…
+22:41:17 [INFO] src.experiments.pipeline —   Extracting train embeddings (100 samples)…
+22:41:17 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_train.pkl
+22:41:17 [INFO] src.experiments.pipeline —   Extracting test embeddings (100 samples)…
+22:41:17 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_test.pkl
+22:41:17 [INFO] src.experiments.pipeline —   Extracting validation embeddings (50 samples)…
+22:41:17 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_validation.pkl
+22:41:17 [INFO] src.experiments.pipeline — 
+[Stage 3/8] Generating spike trains…
+22:41:17 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding train split (500 samples)…
+22:41:17 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=24.56%
+22:41:17 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding test split (200 samples)…
+22:41:17 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=23.67%
+22:41:17 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding validation split (100 samples)…
+22:41:17 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=23.94%
+22:41:17 [INFO] src.experiments.pipeline —   [latency] Encoding train split (500 samples)…
+22:41:17 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=98.00%
+22:41:17 [INFO] src.experiments.pipeline —   [latency] Encoding test split (200 samples)…
+22:41:17 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=98.00%
+22:41:17 [INFO] src.experiments.pipeline —   [latency] Encoding validation split (100 samples)…
+22:41:17 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=98.00%
+22:41:17 [INFO] src.experiments.pipeline —   [temporal] Encoding train split (500 samples)…
+22:41:18 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=98.00%
+22:41:18 [INFO] src.experiments.pipeline —   [temporal] Encoding test split (200 samples)…
+22:41:18 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=98.00%
+22:41:18 [INFO] src.experiments.pipeline —   [temporal] Encoding validation split (100 samples)…
+22:41:18 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=98.00%
+22:41:18 [INFO] src.experiments.pipeline —   [population] Encoding train split (500 samples)…
+22:41:21 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 7680), sparsity=24.82%
+22:41:21 [INFO] src.experiments.pipeline —   [population] Encoding test split (200 samples)…
+22:41:22 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 7680), sparsity=25.38%
+22:41:22 [INFO] src.experiments.pipeline —   [population] Encoding validation split (100 samples)…
+22:41:23 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 7680), sparsity=25.19%
+22:41:23 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding train split (500 samples)…
+22:41:23 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=50.00%
+22:41:23 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding test split (200 samples)…
+22:41:23 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=50.00%
+22:41:23 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding validation split (100 samples)…
+22:41:23 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=50.00%
+22:41:23 [INFO] src.experiments.pipeline — 
+[Stage 4/8] Evaluating transformer baseline…
+22:41:23 [INFO] src.models.transformer_baseline — Extracting train embeddings [legal_bert]
+22:41:23 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_train.pkl
+22:41:23 [INFO] src.models.transformer_baseline — Extracting val embeddings [legal_bert]
+22:41:23 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_validation.pkl
+22:41:23 [INFO] src.models.transformer_baseline — Training logistic regression probe…
+22:42:42 [INFO] src.experiments.pipeline — ============================================================
+22:42:42 [INFO] src.experiments.pipeline — SPIKE-LEGAL-NLP EXPERIMENT PIPELINE
+22:42:42 [INFO] src.experiments.pipeline — ============================================================
+22:42:42 [INFO] src.experiments.pipeline — Dataset:     case_hold
+22:42:42 [INFO] src.experiments.pipeline — Transformer: legal_bert
+22:42:42 [INFO] src.experiments.pipeline — Encodings:   ['poisson_rate', 'latency', 'temporal', 'population', 'binary_threshold']
+22:42:42 [INFO] src.experiments.pipeline — ============================================================
+22:42:42 [INFO] src.experiments.pipeline — 
+[Stage 1/8] Loading dataset…
+22:42:43 [INFO] src.datasets.manager — Loading 'case_hold' from cache: storage\datasets\cache\case_hold.pkl
+22:42:43 [INFO] src.experiments.pipeline — 
+[Stage 2/8] Extracting transformer embeddings…
+22:42:51 [INFO] src.experiments.pipeline —   Extracting train embeddings (100 samples)…
+22:42:51 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_train.pkl
+22:42:51 [INFO] src.experiments.pipeline —   Extracting test embeddings (100 samples)…
+22:42:51 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_test.pkl
+22:42:51 [INFO] src.experiments.pipeline —   Extracting validation embeddings (50 samples)…
+22:42:51 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_validation.pkl
+22:42:51 [INFO] src.experiments.pipeline — 
+[Stage 3/8] Generating spike trains…
+22:42:51 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding train split (500 samples)…
+22:42:52 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=24.57%
+22:42:52 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding test split (200 samples)…
+22:42:52 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=23.64%
+22:42:52 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding validation split (100 samples)…
+22:42:52 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=23.90%
+22:42:52 [INFO] src.experiments.pipeline —   [latency] Encoding train split (500 samples)…
+22:42:52 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=98.00%
+22:42:52 [INFO] src.experiments.pipeline —   [latency] Encoding test split (200 samples)…
+22:42:52 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=98.00%
+22:42:52 [INFO] src.experiments.pipeline —   [latency] Encoding validation split (100 samples)…
+22:42:52 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=98.00%
+22:42:52 [INFO] src.experiments.pipeline —   [temporal] Encoding train split (500 samples)…
+22:42:52 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=98.00%
+22:42:52 [INFO] src.experiments.pipeline —   [temporal] Encoding test split (200 samples)…
+22:42:52 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=98.00%
+22:42:52 [INFO] src.experiments.pipeline —   [temporal] Encoding validation split (100 samples)…
+22:42:52 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=98.00%
+22:42:52 [INFO] src.experiments.pipeline —   [population] Encoding train split (500 samples)…
+22:42:53 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 7680), sparsity=24.83%
+22:42:53 [INFO] src.experiments.pipeline —   [population] Encoding test split (200 samples)…
+22:42:54 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 7680), sparsity=25.38%
+22:42:54 [INFO] src.experiments.pipeline —   [population] Encoding validation split (100 samples)…
+22:42:54 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 7680), sparsity=25.18%
+22:42:54 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding train split (500 samples)…
+22:42:54 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=50.00%
+22:42:54 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding test split (200 samples)…
+22:42:54 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=50.00%
+22:42:54 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding validation split (100 samples)…
+22:42:54 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=50.00%
+22:42:54 [INFO] src.experiments.pipeline — 
+[Stage 4/8] Evaluating transformer baseline…
+22:42:54 [INFO] src.models.transformer_baseline — Extracting train embeddings [legal_bert]
+22:42:54 [INFO] src.models.transformer_baseline — Loading tokenizer: nlpaueb/legal-bert-base-uncased
+22:42:55 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+22:42:55 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/config.json "HTTP/1.1 200 OK"
+22:42:56 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+22:42:56 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/tokenizer_config.json "HTTP/1.1 200 OK"
+22:42:56 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+22:42:56 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+22:42:57 [INFO] src.models.transformer_baseline — Loading base model for embedding extraction
+22:42:57 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+22:42:57 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/config.json "HTTP/1.1 200 OK"
+22:42:58 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+22:42:59 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased "HTTP/1.1 200 OK"
+22:42:59 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/commits/main "HTTP/1.1 200 OK"
+22:42:59 [INFO] src.models.transformer_baseline — Model loaded on cpu
+22:43:00 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/discussions?p=0 "HTTP/1.1 200 OK"
+22:43:00 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/commits/refs%2Fpr%2F1 "HTTP/1.1 200 OK"
+22:43:00 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/refs%2Fpr%2F1/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+22:43:01 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/refs%2Fpr%2F1/model.safetensors "HTTP/1.1 302 Found"
+22:43:27 [INFO] src.models.transformer_baseline — Extracting val embeddings [legal_bert]
+22:43:41 [INFO] src.models.transformer_baseline — X_train shape: (100, 768), X_val shape: (50, 768)
+22:43:41 [INFO] src.models.transformer_baseline — y_train len: 100, y_val len: 50
+22:43:41 [INFO] src.models.transformer_baseline — Training logistic regression probe…
+22:43:41 [INFO] src.models.transformer_baseline — [legal_bert] acc=0.3400 f1_macro=0.3300
+22:43:41 [INFO] src.experiments.pipeline — 
+[Stage 5/8] Training SNN classifiers…
+22:43:41 [INFO] src.experiments.pipeline —   Training SNN [poisson_rate] n_train=100…
+22:43:42 [INFO] src.models.snn_model — Epoch 1/3 loss=3.3560 train_acc=0.2600 val_acc=0.2600
+22:43:42 [INFO] src.models.snn_model — Epoch 2/3 loss=1.7190 train_acc=0.1700 val_acc=0.2600
+22:43:43 [INFO] src.models.snn_model — Epoch 3/3 loss=1.6440 train_acc=0.1500 val_acc=0.2600
+22:43:43 [INFO] src.experiments.pipeline —   Training SNN [latency] n_train=100…
+22:43:43 [INFO] src.models.snn_model — Epoch 1/3 loss=1.6094 train_acc=0.1700 val_acc=0.2600
+22:43:44 [INFO] src.models.snn_model — Epoch 2/3 loss=1.6094 train_acc=0.1700 val_acc=0.2600
+22:43:45 [INFO] src.models.snn_model — Epoch 3/3 loss=1.6094 train_acc=0.1700 val_acc=0.2600
+22:43:45 [INFO] src.experiments.pipeline —   Training SNN [temporal] n_train=100…
+22:43:45 [INFO] src.models.snn_model — Epoch 1/3 loss=1.6094 train_acc=0.1700 val_acc=0.2600
+22:43:46 [INFO] src.models.snn_model — Epoch 2/3 loss=1.6094 train_acc=0.1700 val_acc=0.2600
+22:43:46 [INFO] src.models.snn_model — Epoch 3/3 loss=1.6094 train_acc=0.1700 val_acc=0.2600
+22:43:46 [INFO] src.experiments.pipeline —   Training SNN [population] n_train=100…
+22:43:48 [INFO] src.models.snn_model — Epoch 1/3 loss=4.2919 train_acc=0.2200 val_acc=0.2600
+22:43:50 [INFO] src.models.snn_model — Epoch 2/3 loss=1.6170 train_acc=0.1700 val_acc=0.1400
+22:43:51 [INFO] src.models.snn_model — Epoch 3/3 loss=1.6724 train_acc=0.2100 val_acc=0.2600
+22:43:51 [INFO] src.experiments.pipeline —   Training SNN [binary_threshold] n_train=100…
+22:43:52 [INFO] src.models.snn_model — Epoch 1/3 loss=1.6702 train_acc=0.1800 val_acc=0.2600
+22:43:53 [INFO] src.models.snn_model — Epoch 2/3 loss=1.6094 train_acc=0.1700 val_acc=0.2600
+22:43:53 [INFO] src.models.snn_model — Epoch 3/3 loss=1.6094 train_acc=0.1700 val_acc=0.2600
+22:43:53 [INFO] src.experiments.pipeline — 
+[Stage 6/8] Semantic preservation analysis…
+22:43:53 [INFO] src.evaluation.semantic — [poisson_rate] cosine=0.0364 spearman=0.7970 kendall=0.6479
+22:43:53 [INFO] src.evaluation.semantic — [latency] cosine=-0.0091 spearman=0.8479 kendall=0.6731
+22:43:54 [INFO] src.evaluation.semantic — [temporal] cosine=-0.0299 spearman=nan kendall=nan
+22:43:54 [INFO] src.evaluation.semantic — [population] cosine=-0.0423 spearman=0.8230 kendall=0.5988
+22:43:54 [INFO] src.evaluation.semantic — [binary_threshold] cosine=0.3914 spearman=0.8919 kendall=0.7380
+22:43:54 [INFO] src.experiments.pipeline — 
+[Stage 7/8] Energy analysis…
+22:43:54 [INFO] src.models.transformer_baseline — Loading tokenizer: nlpaueb/legal-bert-base-uncased
+22:43:54 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+22:43:55 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/config.json "HTTP/1.1 200 OK"
+22:43:55 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+22:43:55 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/tokenizer_config.json "HTTP/1.1 200 OK"
+22:43:55 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+22:43:55 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+22:43:56 [INFO] src.models.transformer_baseline — Loading base model for embedding extraction
+22:43:56 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+22:43:56 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/config.json "HTTP/1.1 200 OK"
+22:43:56 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+22:43:57 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased "HTTP/1.1 200 OK"
+22:43:57 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/commits/main "HTTP/1.1 200 OK"
+22:43:57 [INFO] src.models.transformer_baseline — Model loaded on cpu
+22:43:57 [INFO] src.evaluation.energy — [poisson_rate] energy ratio: 9935.33x savings: 100.0%
+22:43:57 [INFO] src.evaluation.energy — [latency] energy ratio: 489972.20x savings: 100.0%
+22:43:57 [INFO] src.evaluation.energy — [temporal] energy ratio: 489328.95x savings: 100.0%
+22:43:57 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/discussions?p=0 "HTTP/1.1 200 OK"
+22:43:57 [INFO] src.evaluation.energy — [population] energy ratio: 1709.43x savings: 99.9%
+22:43:57 [INFO] src.evaluation.energy — [binary_threshold] energy ratio: 16371.16x savings: 100.0%
+22:43:57 [INFO] src.experiments.pipeline — 
+[Stage 8/8] Generating visualizations and report…
+22:43:58 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/commits/refs%2Fpr%2F1 "HTTP/1.1 200 OK"
+22:43:58 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/refs%2Fpr%2F1/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+22:43:58 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/refs%2Fpr%2F1/model.safetensors "HTTP/1.1 302 Found"
+22:44:01 [WARNING] src.visualization.plots — Embedding scatter plot failed: index 162 is out of bounds for axis 0 with size 100
+22:44:02 [INFO] src.experiments.pipeline — 
+============================================================
+22:44:02 [INFO] src.experiments.pipeline — Pipeline complete in 80.3s
+22:44:02 [INFO] src.experiments.pipeline — Report: storage\results\reports\report_case_hold_legal_bert.html
+22:44:02 [INFO] src.experiments.pipeline — ============================================================
+22:45:36 [INFO] src.experiments.pipeline — ============================================================
+22:45:36 [INFO] src.experiments.pipeline — SPIKE-LEGAL-NLP EXPERIMENT PIPELINE
+22:45:36 [INFO] src.experiments.pipeline — ============================================================
+22:45:36 [INFO] src.experiments.pipeline — Dataset:     case_hold
+22:45:36 [INFO] src.experiments.pipeline — Transformer: legal_bert
+22:45:36 [INFO] src.experiments.pipeline — Encodings:   ['poisson_rate', 'latency', 'temporal', 'population', 'binary_threshold']
+22:45:36 [INFO] src.experiments.pipeline — ============================================================
+22:45:36 [INFO] src.experiments.pipeline — 
+[Stage 1/8] Loading dataset…
+22:45:37 [INFO] src.datasets.manager — Loading 'case_hold' from cache: storage\datasets\cache\case_hold.pkl
+22:45:37 [INFO] src.experiments.pipeline — 
+[Stage 2/8] Extracting transformer embeddings…
+22:46:01 [INFO] src.experiments.pipeline —   Extracting train embeddings (500 samples)…
+22:46:01 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_train.pkl
+22:46:01 [INFO] src.experiments.pipeline —   Extracting test embeddings (200 samples)…
+22:46:01 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_test.pkl
+22:46:01 [INFO] src.experiments.pipeline —   Extracting validation embeddings (100 samples)…
+22:46:01 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_validation.pkl
+22:46:01 [INFO] src.experiments.pipeline — 
+[Stage 3/8] Generating spike trains…
+22:46:01 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding train split (500 samples)…
+22:46:01 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=24.56%
+22:46:01 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding test split (200 samples)…
+22:46:01 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=23.61%
+22:46:01 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding validation split (100 samples)…
+22:46:01 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=23.93%
+22:46:01 [INFO] src.experiments.pipeline —   [latency] Encoding train split (500 samples)…
+22:46:01 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=98.00%
+22:46:01 [INFO] src.experiments.pipeline —   [latency] Encoding test split (200 samples)…
+22:46:01 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=98.00%
+22:46:01 [INFO] src.experiments.pipeline —   [latency] Encoding validation split (100 samples)…
+22:46:01 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=98.00%
+22:46:01 [INFO] src.experiments.pipeline —   [temporal] Encoding train split (500 samples)…
+22:46:01 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=98.00%
+22:46:01 [INFO] src.experiments.pipeline —   [temporal] Encoding test split (200 samples)…
+22:46:01 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=98.00%
+22:46:01 [INFO] src.experiments.pipeline —   [temporal] Encoding validation split (100 samples)…
+22:46:01 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=98.00%
+22:46:01 [INFO] src.experiments.pipeline —   [population] Encoding train split (500 samples)…
+22:46:03 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 7680), sparsity=24.83%
+22:46:03 [INFO] src.experiments.pipeline —   [population] Encoding test split (200 samples)…
+22:46:04 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 7680), sparsity=25.38%
+22:46:04 [INFO] src.experiments.pipeline —   [population] Encoding validation split (100 samples)…
+22:46:04 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 7680), sparsity=25.19%
+22:46:04 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding train split (500 samples)…
+22:46:04 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=50.00%
+22:46:04 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding test split (200 samples)…
+22:46:04 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=50.00%
+22:46:04 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding validation split (100 samples)…
+22:46:04 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=50.00%
+22:46:04 [INFO] src.experiments.pipeline — 
+[Stage 4/8] Evaluating transformer baseline…
+22:46:04 [INFO] src.models.transformer_baseline — Extracting train embeddings [legal_bert]
+22:46:04 [INFO] src.models.transformer_baseline — Loading tokenizer: nlpaueb/legal-bert-base-uncased
+22:46:05 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+22:46:05 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/config.json "HTTP/1.1 200 OK"
+22:46:05 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+22:46:05 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/tokenizer_config.json "HTTP/1.1 200 OK"
+22:46:06 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+22:46:06 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+22:46:06 [INFO] src.models.transformer_baseline — Loading base model for embedding extraction
+22:46:07 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+22:46:07 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/config.json "HTTP/1.1 200 OK"
+22:46:08 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+22:46:08 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased "HTTP/1.1 200 OK"
+22:46:09 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/commits/main "HTTP/1.1 200 OK"
+22:46:09 [INFO] src.models.transformer_baseline — Model loaded on cpu
+22:46:09 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/discussions?p=0 "HTTP/1.1 200 OK"
+22:46:10 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/commits/refs%2Fpr%2F1 "HTTP/1.1 200 OK"
+22:46:10 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/refs%2Fpr%2F1/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+22:46:10 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/refs%2Fpr%2F1/model.safetensors "HTTP/1.1 302 Found"
+22:49:11 [INFO] src.reporting.report — Report generated -> storage\results\reports\report_20260728_224911.html
+22:49:11 [INFO] src.reporting.report — Raw JSON -> storage\results\reports\report_20260728_224911_raw.json
+22:49:41 [INFO] src.reporting.report — Report generated -> storage\results\reports\report_20260728_224941.tex
+22:49:41 [INFO] src.reporting.report — Raw JSON -> storage\results\reports\report_20260728_224941_raw.json
+22:49:48 [INFO] src.reporting.report — Report generated -> storage\results\reports\report_20260728_224948.md
+22:49:48 [INFO] src.reporting.report — Raw JSON -> storage\results\reports\report_20260728_224948_raw.json
+22:50:23 [INFO] src.datasets.manager — Loading 'case_hold' from cache: storage\datasets\cache\case_hold.pkl
+22:50:23 [INFO] src.models.transformer_baseline — Loading tokenizer: nlpaueb/legal-bert-base-uncased
+22:50:24 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+22:50:24 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/config.json "HTTP/1.1 200 OK"
+22:50:24 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+22:50:24 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/tokenizer_config.json "HTTP/1.1 200 OK"
+22:50:24 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+22:50:25 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+22:50:25 [INFO] src.models.transformer_baseline — Loading base model for embedding extraction
+22:50:25 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+22:50:25 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/config.json "HTTP/1.1 200 OK"
+22:50:26 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+22:50:26 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased "HTTP/1.1 200 OK"
+22:50:27 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/commits/main "HTTP/1.1 200 OK"
+22:50:27 [INFO] src.models.transformer_baseline — Model loaded on cpu
+22:50:27 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/discussions?p=0 "HTTP/1.1 200 OK"
+22:50:27 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/commits/refs%2Fpr%2F1 "HTTP/1.1 200 OK"
+22:50:28 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/refs%2Fpr%2F1/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+22:50:28 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/refs%2Fpr%2F1/model.safetensors "HTTP/1.1 302 Found"
+22:51:04 [INFO] src.datasets.manager — Loading 'case_hold' from cache: storage\datasets\cache\case_hold.pkl
+22:51:13 [INFO] src.datasets.manager — Loading 'case_hold' from cache: storage\datasets\cache\case_hold.pkl
+22:52:34 [INFO] src.experiments.pipeline — ============================================================
+22:52:34 [INFO] src.experiments.pipeline — SPIKE-LEGAL-NLP EXPERIMENT PIPELINE
+22:52:34 [INFO] src.experiments.pipeline — ============================================================
+22:52:34 [INFO] src.experiments.pipeline — Dataset:     case_hold
+22:52:34 [INFO] src.experiments.pipeline — Transformer: legal_bert
+22:52:34 [INFO] src.experiments.pipeline — Encodings:   ['poisson_rate', 'latency', 'temporal', 'population', 'binary_threshold']
+22:52:34 [INFO] src.experiments.pipeline — ============================================================
+22:52:34 [INFO] src.experiments.pipeline — 
+[Stage 1/8] Loading dataset…
+22:52:35 [INFO] src.datasets.manager — Loading 'case_hold' from cache: storage\datasets\cache\case_hold.pkl
+22:52:35 [INFO] src.experiments.pipeline — 
+[Stage 2/8] Extracting transformer embeddings…
+22:52:48 [INFO] src.experiments.pipeline —   Extracting train embeddings (500 samples)…
+22:52:48 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_train.pkl
+22:52:48 [INFO] src.experiments.pipeline —   Extracting test embeddings (200 samples)…
+22:52:48 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_test.pkl
+22:52:48 [INFO] src.experiments.pipeline —   Extracting validation embeddings (100 samples)…
+22:52:48 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_validation.pkl
+22:52:48 [INFO] src.experiments.pipeline — 
+[Stage 3/8] Generating spike trains…
+22:52:48 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding train split (500 samples)…
+22:52:48 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=24.56%
+22:52:48 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding test split (200 samples)…
+22:52:48 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=23.66%
+22:52:48 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding validation split (100 samples)…
+22:52:48 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=23.93%
+22:52:48 [INFO] src.experiments.pipeline —   [latency] Encoding train split (500 samples)…
+22:52:48 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=98.00%
+22:52:48 [INFO] src.experiments.pipeline —   [latency] Encoding test split (200 samples)…
+22:52:48 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=98.00%
+22:52:48 [INFO] src.experiments.pipeline —   [latency] Encoding validation split (100 samples)…
+22:52:49 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=98.00%
+22:52:49 [INFO] src.experiments.pipeline —   [temporal] Encoding train split (500 samples)…
+22:52:49 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=98.00%
+22:52:49 [INFO] src.experiments.pipeline —   [temporal] Encoding test split (200 samples)…
+22:52:49 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=98.00%
+22:52:49 [INFO] src.experiments.pipeline —   [temporal] Encoding validation split (100 samples)…
+22:52:49 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=98.00%
+22:52:49 [INFO] src.experiments.pipeline —   [population] Encoding train split (500 samples)…
+22:52:50 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 7680), sparsity=24.82%
+22:52:50 [INFO] src.experiments.pipeline —   [population] Encoding test split (200 samples)…
+22:52:51 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 7680), sparsity=25.39%
+22:52:51 [INFO] src.experiments.pipeline —   [population] Encoding validation split (100 samples)…
+22:52:51 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 7680), sparsity=25.20%
+22:52:51 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding train split (500 samples)…
+22:52:51 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=50.00%
+22:52:51 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding test split (200 samples)…
+22:52:51 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=50.00%
+22:52:51 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding validation split (100 samples)…
+22:52:51 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=50.00%
+22:52:51 [INFO] src.experiments.pipeline — 
+[Stage 4/8] Evaluating transformer baseline…
+22:52:51 [INFO] src.models.transformer_baseline — Extracting train embeddings [legal_bert]
+22:52:51 [INFO] src.models.transformer_baseline — Loading tokenizer: nlpaueb/legal-bert-base-uncased
+22:52:52 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+22:52:52 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/config.json "HTTP/1.1 200 OK"
+22:52:52 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+22:52:52 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/tokenizer_config.json "HTTP/1.1 200 OK"
+22:52:53 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+22:52:53 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+22:52:53 [INFO] src.models.transformer_baseline — Loading base model for embedding extraction
+22:52:53 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+22:52:53 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/config.json "HTTP/1.1 200 OK"
+22:52:55 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+22:52:55 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased "HTTP/1.1 200 OK"
+22:52:55 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/commits/main "HTTP/1.1 200 OK"
+22:52:55 [INFO] src.models.transformer_baseline — Model loaded on cpu
+22:52:56 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/discussions?p=0 "HTTP/1.1 200 OK"
+22:52:56 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/commits/refs%2Fpr%2F1 "HTTP/1.1 200 OK"
+22:52:56 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/refs%2Fpr%2F1/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+22:52:57 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/refs%2Fpr%2F1/model.safetensors "HTTP/1.1 302 Found"
+22:54:36 [INFO] src.experiments.pipeline — ============================================================
+22:54:36 [INFO] src.experiments.pipeline — SPIKE-LEGAL-NLP EXPERIMENT PIPELINE
+22:54:36 [INFO] src.experiments.pipeline — ============================================================
+22:54:36 [INFO] src.experiments.pipeline — Dataset:     case_hold
+22:54:36 [INFO] src.experiments.pipeline — Transformer: legal_bert
+22:54:36 [INFO] src.experiments.pipeline — Encodings:   ['poisson_rate', 'latency', 'temporal', 'population', 'binary_threshold']
+22:54:36 [INFO] src.experiments.pipeline — ============================================================
+22:54:36 [INFO] src.experiments.pipeline — 
+[Stage 1/8] Loading dataset…
+22:54:37 [INFO] src.datasets.manager — Loading 'case_hold' from cache: storage\datasets\cache\case_hold.pkl
+22:54:38 [INFO] src.experiments.pipeline — 
+[Stage 2/8] Extracting transformer embeddings…
+22:55:00 [INFO] src.experiments.pipeline —   Extracting train embeddings (100 samples)…
+22:55:00 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_train.pkl
+22:55:00 [INFO] src.experiments.pipeline —   Extracting test embeddings (100 samples)…
+22:55:00 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_test.pkl
+22:55:00 [INFO] src.experiments.pipeline —   Extracting validation embeddings (50 samples)…
+22:55:00 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_validation.pkl
+22:55:00 [INFO] src.experiments.pipeline — 
+[Stage 3/8] Generating spike trains…
+22:55:00 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding train split (500 samples)…
+22:55:01 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=24.55%
+22:55:01 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding test split (200 samples)…
+22:55:01 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=23.63%
+22:55:01 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding validation split (100 samples)…
+22:55:01 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=23.90%
+22:55:01 [INFO] src.experiments.pipeline —   [latency] Encoding train split (500 samples)…
+22:55:01 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=98.00%
+22:55:01 [INFO] src.experiments.pipeline —   [latency] Encoding test split (200 samples)…
+22:55:01 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=98.00%
+22:55:01 [INFO] src.experiments.pipeline —   [latency] Encoding validation split (100 samples)…
+22:55:01 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=98.00%
+22:55:01 [INFO] src.experiments.pipeline —   [temporal] Encoding train split (500 samples)…
+22:55:01 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=98.00%
+22:55:01 [INFO] src.experiments.pipeline —   [temporal] Encoding test split (200 samples)…
+22:55:01 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=98.00%
+22:55:01 [INFO] src.experiments.pipeline —   [temporal] Encoding validation split (100 samples)…
+22:55:01 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=98.00%
+22:55:01 [INFO] src.experiments.pipeline —   [population] Encoding train split (500 samples)…
+22:55:06 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 7680), sparsity=24.83%
+22:55:06 [INFO] src.experiments.pipeline —   [population] Encoding test split (200 samples)…
+22:55:07 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 7680), sparsity=25.37%
+22:55:07 [INFO] src.experiments.pipeline —   [population] Encoding validation split (100 samples)…
+22:55:08 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 7680), sparsity=25.18%
+22:55:08 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding train split (500 samples)…
+22:55:08 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=50.00%
+22:55:08 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding test split (200 samples)…
+22:55:09 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=50.00%
+22:55:09 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding validation split (100 samples)…
+22:55:09 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=50.00%
+22:55:09 [INFO] src.experiments.pipeline — 
+[Stage 4/8] Evaluating transformer baseline…
+22:55:09 [INFO] src.models.transformer_baseline — Extracting train embeddings [legal_bert]
+22:55:09 [INFO] src.models.transformer_baseline — Loading tokenizer: nlpaueb/legal-bert-base-uncased
+22:55:10 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+22:55:10 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/config.json "HTTP/1.1 200 OK"
+22:55:10 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+22:55:10 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/tokenizer_config.json "HTTP/1.1 200 OK"
+22:55:11 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+22:55:11 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+22:55:11 [INFO] src.models.transformer_baseline — Loading base model for embedding extraction
+22:55:11 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+22:55:11 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/config.json "HTTP/1.1 200 OK"
+22:55:15 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+22:55:16 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased "HTTP/1.1 200 OK"
+22:55:16 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/commits/main "HTTP/1.1 200 OK"
+22:55:16 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/discussions?p=0 "HTTP/1.1 200 OK"
+22:55:17 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/commits/refs%2Fpr%2F1 "HTTP/1.1 200 OK"
+22:55:17 [INFO] src.models.transformer_baseline — Model loaded on cpu
+22:55:17 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/refs%2Fpr%2F1/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+22:55:18 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/refs%2Fpr%2F1/model.safetensors "HTTP/1.1 302 Found"
+22:55:29 [INFO] src.experiments.pipeline — ============================================================
+22:55:29 [INFO] src.experiments.pipeline — SPIKE-LEGAL-NLP EXPERIMENT PIPELINE
+22:55:29 [INFO] src.experiments.pipeline — ============================================================
+22:55:29 [INFO] src.experiments.pipeline — Dataset:     case_hold
+22:55:29 [INFO] src.experiments.pipeline — Transformer: legal_bert
+22:55:29 [INFO] src.experiments.pipeline — Encodings:   ['poisson_rate', 'latency', 'temporal', 'population', 'binary_threshold']
+22:55:29 [INFO] src.experiments.pipeline — ============================================================
+22:55:29 [INFO] src.experiments.pipeline — 
+[Stage 1/8] Loading dataset…
+22:55:31 [INFO] src.datasets.manager — Loading 'case_hold' from cache: storage\datasets\cache\case_hold.pkl
+22:55:31 [INFO] src.experiments.pipeline — 
+[Stage 2/8] Extracting transformer embeddings…
+22:55:34 [INFO] src.models.transformer_baseline — Extracting val embeddings [legal_bert]
+22:56:55 [INFO] src.experiments.pipeline —   Extracting train embeddings (500 samples)…
+22:56:55 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_train.pkl
+22:56:55 [INFO] src.experiments.pipeline —   Extracting test embeddings (200 samples)…
+22:56:55 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_test.pkl
+22:56:55 [INFO] src.experiments.pipeline —   Extracting validation embeddings (100 samples)…
+22:56:55 [INFO] src.models.transformer_baseline — Loading cached embeddings: storage\embeddings\legal_bert_case_hold_validation.pkl
+22:56:55 [INFO] src.experiments.pipeline — 
+[Stage 3/8] Generating spike trains…
+22:56:55 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding train split (500 samples)…
+22:56:56 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=24.56%
+22:56:56 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding test split (200 samples)…
+22:56:56 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=23.66%
+22:56:56 [INFO] src.experiments.pipeline —   [poisson_rate] Encoding validation split (100 samples)…
+22:56:56 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=23.93%
+22:56:56 [INFO] src.experiments.pipeline —   [latency] Encoding train split (500 samples)…
+22:56:56 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=98.00%
+22:56:56 [INFO] src.experiments.pipeline —   [latency] Encoding test split (200 samples)…
+22:56:56 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=98.00%
+22:56:56 [INFO] src.experiments.pipeline —   [latency] Encoding validation split (100 samples)…
+22:56:56 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=98.00%
+22:56:56 [INFO] src.experiments.pipeline —   [temporal] Encoding train split (500 samples)…
+22:56:56 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=98.00%
+22:56:56 [INFO] src.experiments.pipeline —   [temporal] Encoding test split (200 samples)…
+22:56:57 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=98.00%
+22:56:57 [INFO] src.experiments.pipeline —   [temporal] Encoding validation split (100 samples)…
+22:56:57 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=98.00%
+22:56:57 [INFO] src.experiments.pipeline —   [population] Encoding train split (500 samples)…
+22:57:01 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 7680), sparsity=24.82%
+22:57:01 [INFO] src.experiments.pipeline —   [population] Encoding test split (200 samples)…
+22:57:02 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 7680), sparsity=25.38%
+22:57:02 [INFO] src.experiments.pipeline —   [population] Encoding validation split (100 samples)…
+22:57:03 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 7680), sparsity=25.18%
+22:57:03 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding train split (500 samples)…
+22:57:03 [INFO] src.experiments.pipeline —     -> shape=(500, 50, 768), sparsity=50.00%
+22:57:03 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding test split (200 samples)…
+22:57:03 [INFO] src.experiments.pipeline —     -> shape=(200, 50, 768), sparsity=50.00%
+22:57:03 [INFO] src.experiments.pipeline —   [binary_threshold] Encoding validation split (100 samples)…
+22:57:03 [INFO] src.experiments.pipeline —     -> shape=(100, 50, 768), sparsity=50.00%
+22:57:03 [INFO] src.experiments.pipeline — 
+[Stage 4/8] Evaluating transformer baseline…
+22:57:03 [INFO] src.models.transformer_baseline — Extracting train embeddings [legal_bert]
+22:57:03 [INFO] src.models.transformer_baseline — Loading tokenizer: nlpaueb/legal-bert-base-uncased
+22:57:04 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+22:57:04 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/config.json "HTTP/1.1 200 OK"
+22:57:04 [INFO] src.models.transformer_baseline — X_train shape: (500, 768), X_val shape: (100, 768)
+22:57:04 [INFO] src.models.transformer_baseline — y_train len: 500, y_val len: 100
+22:57:05 [INFO] src.models.transformer_baseline — Training logistic regression probe…
+22:57:05 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+22:57:05 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/tokenizer_config.json "HTTP/1.1 200 OK"
+22:57:05 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+22:57:05 [INFO] src.models.transformer_baseline — [legal_bert] acc=0.1700 f1_macro=0.1699
+22:57:05 [INFO] src.experiments.pipeline — 
+[Stage 5/8] Training SNN classifiers…
+22:57:05 [INFO] src.experiments.pipeline —   Training SNN [poisson_rate] n_train=500…
+22:57:05 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+22:57:05 [INFO] src.models.transformer_baseline — Loading base model for embedding extraction
+22:57:06 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+22:57:06 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/config.json "HTTP/1.1 200 OK"
+22:57:10 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+22:57:10 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased "HTTP/1.1 200 OK"
+22:57:11 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/commits/main "HTTP/1.1 200 OK"
+22:57:11 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/discussions?p=0 "HTTP/1.1 200 OK"
+22:57:11 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/commits/refs%2Fpr%2F1 "HTTP/1.1 200 OK"
+22:57:12 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/refs%2Fpr%2F1/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+22:57:12 [INFO] src.models.transformer_baseline — Model loaded on cpu
+22:57:12 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/refs%2Fpr%2F1/model.safetensors "HTTP/1.1 302 Found"
+22:58:13 [INFO] src.models.transformer_baseline — Extracting val embeddings [legal_bert]
+22:58:25 [INFO] src.models.snn_model — Epoch 1/10 loss=1.6211 train_acc=0.2060 val_acc=0.2200
+22:58:38 [INFO] src.models.transformer_baseline — X_train shape: (100, 768), X_val shape: (50, 768)
+22:58:38 [INFO] src.models.transformer_baseline — y_train len: 100, y_val len: 50
+22:58:38 [INFO] src.models.transformer_baseline — Training logistic regression probe…
+22:58:39 [INFO] src.models.transformer_baseline — [legal_bert] acc=0.3400 f1_macro=0.3300
+22:58:39 [INFO] src.experiments.pipeline — 
+[Stage 5/8] Training SNN classifiers…
+22:58:39 [INFO] src.experiments.pipeline —   Training SNN [poisson_rate] n_train=100…
+22:58:40 [INFO] src.models.snn_model — Epoch 1/3 loss=1.8374 train_acc=0.1300 val_acc=0.2600
+22:58:40 [INFO] src.models.snn_model — Epoch 2/3 loss=1.6648 train_acc=0.1500 val_acc=0.2600
+22:58:41 [INFO] src.models.snn_model — Epoch 3/3 loss=1.6094 train_acc=0.1700 val_acc=0.2600
+22:58:41 [INFO] src.experiments.pipeline —   Training SNN [latency] n_train=100…
+22:58:41 [INFO] src.models.snn_model — Epoch 1/3 loss=1.6094 train_acc=0.1700 val_acc=0.2600
+22:58:42 [INFO] src.models.snn_model — Epoch 2/3 loss=1.6094 train_acc=0.1700 val_acc=0.2600
+22:58:42 [INFO] src.models.snn_model — Epoch 3/3 loss=1.6094 train_acc=0.1700 val_acc=0.2600
+22:58:42 [INFO] src.experiments.pipeline —   Training SNN [temporal] n_train=100…
+22:58:43 [INFO] src.models.snn_model — Epoch 1/3 loss=1.6094 train_acc=0.1700 val_acc=0.2600
+22:58:43 [INFO] src.models.snn_model — Epoch 2/3 loss=1.6094 train_acc=0.1700 val_acc=0.2600
+22:58:44 [INFO] src.models.snn_model — Epoch 3/3 loss=1.6094 train_acc=0.1700 val_acc=0.2600
+22:58:44 [INFO] src.experiments.pipeline —   Training SNN [population] n_train=100…
+22:58:45 [INFO] src.models.snn_model — Epoch 1/3 loss=4.1889 train_acc=0.1600 val_acc=0.2600
+22:58:47 [INFO] src.models.snn_model — Epoch 2/3 loss=3.1822 train_acc=0.1700 val_acc=0.2600
+22:58:48 [INFO] src.models.snn_model — Epoch 3/3 loss=1.6094 train_acc=0.1700 val_acc=0.2600
+22:58:48 [INFO] src.experiments.pipeline —   Training SNN [binary_threshold] n_train=100…
+22:58:49 [INFO] src.models.snn_model — Epoch 1/3 loss=1.7368 train_acc=0.2100 val_acc=0.2600
+22:58:49 [INFO] src.models.snn_model — Epoch 2/3 loss=1.7796 train_acc=0.2000 val_acc=0.2800
+22:58:50 [INFO] src.models.snn_model — Epoch 3/3 loss=1.5880 train_acc=0.2500 val_acc=0.2000
+22:58:50 [INFO] src.experiments.pipeline — 
+[Stage 6/8] Semantic preservation analysis…
+22:58:50 [INFO] src.evaluation.semantic — [poisson_rate] cosine=0.0346 spearman=0.8487 kendall=0.6941
+22:58:50 [INFO] src.evaluation.semantic — [latency] cosine=-0.0092 spearman=0.8114 kendall=0.6642
+22:58:50 [INFO] src.evaluation.semantic — [temporal] cosine=-0.0300 spearman=nan kendall=nan
+22:58:51 [INFO] src.evaluation.semantic — [population] cosine=-0.0424 spearman=0.8635 kendall=0.5994
+22:58:51 [INFO] src.evaluation.semantic — [binary_threshold] cosine=0.3944 spearman=0.9085 kendall=0.7624
+22:58:51 [INFO] src.experiments.pipeline — 
+[Stage 7/8] Energy analysis…
+22:58:51 [INFO] src.models.transformer_baseline — Loading tokenizer: nlpaueb/legal-bert-base-uncased
+22:58:52 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+22:58:52 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/config.json "HTTP/1.1 200 OK"
+22:58:52 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+22:58:52 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/tokenizer_config.json "HTTP/1.1 200 OK"
+22:58:52 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+22:58:53 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+22:58:53 [INFO] src.models.transformer_baseline — Loading base model for embedding extraction
+22:58:53 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+22:58:53 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/nlpaueb/legal-bert-base-uncased/15b570cbf88259610b082a167dacc190124f60f6/config.json "HTTP/1.1 200 OK"
+22:58:53 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+22:58:54 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased "HTTP/1.1 200 OK"
+22:58:54 [INFO] src.models.transformer_baseline — Model loaded on cpu
+22:58:54 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/commits/main "HTTP/1.1 200 OK"
+22:58:54 [INFO] src.evaluation.energy — [poisson_rate] energy ratio: 9935.04x savings: 100.0%
+22:58:54 [INFO] src.evaluation.energy — [latency] energy ratio: 489972.20x savings: 100.0%
+22:58:54 [INFO] src.evaluation.energy — [temporal] energy ratio: 489328.95x savings: 100.0%
+22:58:54 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/discussions?p=0 "HTTP/1.1 200 OK"
+22:58:55 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/nlpaueb/legal-bert-base-uncased/commits/refs%2Fpr%2F1 "HTTP/1.1 200 OK"
+22:58:55 [INFO] src.evaluation.energy — [population] energy ratio: 1709.44x savings: 99.9%
+22:58:55 [INFO] src.evaluation.energy — [binary_threshold] energy ratio: 16371.16x savings: 100.0%
+22:58:55 [INFO] src.experiments.pipeline — 
+[Stage 8/8] Generating visualizations and report…
+22:58:55 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/refs%2Fpr%2F1/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+22:58:55 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/nlpaueb/legal-bert-base-uncased/resolve/refs%2Fpr%2F1/model.safetensors "HTTP/1.1 302 Found"
+22:58:58 [WARNING] src.visualization.plots — Embedding scatter plot failed: index 147 is out of bounds for axis 0 with size 100
+22:58:59 [INFO] src.reporting.report — Report generated -> storage\results\reports\report_case_hold_legal_bert.html
+22:58:59 [INFO] src.reporting.report — Raw JSON -> storage\results\reports\report_case_hold_legal_bert_raw.json
+22:58:59 [INFO] src.experiments.pipeline — 
+============================================================
+22:58:59 [INFO] src.experiments.pipeline — Pipeline complete in 263.0s
+22:58:59 [INFO] src.experiments.pipeline — Report: storage\results\reports\report_case_hold_legal_bert.html
+22:58:59 [INFO] src.experiments.pipeline — ============================================================

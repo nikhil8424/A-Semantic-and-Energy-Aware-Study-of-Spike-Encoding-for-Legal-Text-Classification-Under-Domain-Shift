@@ -157,7 +157,7 @@ class ExperimentPipeline:
         report_path = self._stage_report(
             dataset_key, transformer_key,
             clf_results, semantic_results, energy_results,
-            {}, figure_paths,
+            None, figure_paths,
         )
         self._results["report"] = report_path
 
@@ -233,7 +233,7 @@ class ExperimentPipeline:
                 spk = encoder.encode(emb)
                 spike_trains_all[enc_name][split_name] = spk
                 logger.info(
-                    f"    → shape={spk.shape}, sparsity={encoder.sparsity(spk):.2%}"
+                    f"    -> shape={spk.shape}, sparsity={encoder.sparsity(spk):.2%}"
                 )
         return spike_trains_all
 
@@ -308,7 +308,7 @@ class ExperimentPipeline:
         from ..evaluation import SemanticPreservation
 
         sem = SemanticPreservation(self.config)
-        original_emb = embeddings.get("train") or embeddings.get("test")
+        original_emb = embeddings.get("train") if "train" in embeddings else embeddings.get("test")
         if original_emb is None:
             return {}
 
@@ -345,12 +345,19 @@ class ExperimentPipeline:
         sop_counts = {}
         spk_by_enc = {}
         for enc_name, splits in spike_trains_all.items():
-            spk = splits.get("train") or splits.get("test")
+            spk = splits.get("train") if "train" in splits else splits.get("test")
             if spk is None:
                 continue
             spk_by_enc[enc_name] = spk
             clf = SNNClassifier(self.config, enc_name)
-            clf.num_classes = max(2, int(np.max([r["label"] for r in data.get("train", [])] or [1])) + 1)
+            train_labels = [r["label"] for r in data.get("train", [])]
+            # Handle multi-label lists
+            if train_labels and isinstance(train_labels[0], list):
+                flat_labels = [item for sublist in train_labels for item in sublist]
+                max_label = max(flat_labels) if flat_labels else 1
+            else:
+                max_label = max(train_labels) if train_labels else 1
+            clf.num_classes = max(2, int(max_label) + 1)
             sop_info = clf.count_synaptic_operations(spk[:200])
             sop_counts[enc_name] = sop_info["avg_sops_per_sample"]
 
@@ -390,7 +397,7 @@ class ExperimentPipeline:
 
         # Embedding scatter
         if embeddings and spk_for_raster:
-            emb = embeddings.get("train") or list(embeddings.values())[0]
+            emb = embeddings.get("train") if "train" in embeddings else list(embeddings.values())[0]
             train_rows = data.get("train", [])
             if train_rows and len(train_rows) > 0:
                 raw_labels = [r["label"] for r in train_rows]

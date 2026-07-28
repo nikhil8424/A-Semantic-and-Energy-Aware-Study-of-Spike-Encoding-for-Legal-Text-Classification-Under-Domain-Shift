@@ -53,8 +53,8 @@ class EnergyAnalyzer:
 
         # Memory: parameters are loaded from DRAM once per forward pass
         # Plus activations: seq_length × hidden_size × n_layers × dtype_bytes
-        param_memory_pj = model_params * dtype_bytes * self.dram_energy_pj / 64
-        # (divide by cache line size 64 bytes)
+        param_memory_pj = model_params * dtype_bytes * self.dram_energy_pj / 8
+        # (divide by 8 bytes per 64-bit access per Horowitz 2014)
 
         total_pj = compute_energy_pj + param_memory_pj
         return {
@@ -94,7 +94,7 @@ class EnergyAnalyzer:
         if include_memory:
             # Memory access reduced by sparsity (event-driven processing)
             param_memory_pj = (
-                snn_params * 4 * self.dram_energy_pj / 64 * active_fraction
+                snn_params * 4 * self.dram_energy_pj / 8 * active_fraction
             )
         else:
             param_memory_pj = 0.0

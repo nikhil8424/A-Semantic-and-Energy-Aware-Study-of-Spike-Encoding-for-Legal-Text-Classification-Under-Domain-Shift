@@ -63,6 +63,9 @@ class SemanticPreservation:
             # Reduce spike rate to match embedding dim via averaging blocks
             ratio = spk_rate.shape[1] // emb.shape[1]
             if ratio > 1:
+                # Slice to exact multiple before reshape
+                target_dim = emb.shape[1] * ratio
+                spk_rate = spk_rate[:, :target_dim]
                 spk_rate = spk_rate.reshape(N, emb.shape[1], ratio).mean(axis=2)
             else:
                 # Trim or pad

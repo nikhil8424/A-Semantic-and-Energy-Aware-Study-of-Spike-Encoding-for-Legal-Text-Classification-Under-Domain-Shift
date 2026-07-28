@@ -142,8 +142,8 @@ class ReportGenerator:
                 f, indent=2, default=str,
             )
 
-        logger.info(f"Report generated → {path}")
-        logger.info(f"Raw JSON → {json_path}")
+        logger.info(f"Report generated -> {path}")
+        logger.info(f"Raw JSON -> {json_path}")
         return str(path)
 
     # ─────────────────────────────────────────────────────────────────
